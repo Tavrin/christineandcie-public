@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/settings.css">
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+     <div class="wrapper">
+       <div class="row">
+     <%include ../../partials/navSettings.ejs%>
+        
+     <div class="col-9 float-left">
+    
+
+            <div class="subhead">
+              <h2 class="subhead-heading">Modifier ou créer une clé api</h2>
+            </div>
+        
+            <!-- Change Password -->
+            <form class="edit_user" id="form-api" action="/parametres/createKey/<%=user._id%>/<%=user.keyId%>" accept-charset="UTF-8" method="post">
+              <dl class="form-group password-confirmation-form">
+                <dt><label for="user_old_password">Identifiant api : (Il se réinitialisera aussi, cependant celui-ci sera toujours disponible ici)</label></dt>
+                <dd><input type="text" name="keyId" readonly id="user-keyId" <%if(user.keyId){%>value="<%=user.keyId%>"<%}%> class="form-control form-control"></dd>
+              </dl>
+              <dl class="form-group password-confirmation-form">
+                <dt><label for="user_new_password">Clé secrète : (Attention ! Il faut penser à l'enregistrer quelque part car elle sera non récupérable après avoir quitté cette page, il faudra en créer une autre ici)</label></dt>
+                <dd>
+                  <input type="text" name="apiSecret"  <%if(locals.apiSecret){%>value="<%=apiSecret%>"<%}else{%>value="Il faut réinitialiser la clé pour l'obtenir à nouveau"<%}%> readonly id="user-apiSecret"    class="form-control form-control" >
+                </dd>
+              </dl>
+              <p>
+                <button class="btn mr-2 bouton-settings" type="submit">Réinitialiser</button>
+              </p>
+        </form>      
+        
+        
+          </div>
+
+      </div>
+     </div>
+  
+
+ <div class="bottom"><% include ../../partials/footer.ejs %></div>
+ <script>
+        function check(input) {
+            if (input.value != document.getElementById('user_new_password').value) {
+                input.setCustomValidity('Les mots de passe doivent correspondre');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+        }
+    </script>
+    <script>
+      let userId= "<%=user._id%>"
+        let keyId = "<%=user.keyId%>"
+        </script>
+ <script src="/js/parametres.js"></script>
+ <script>
+   $('#navSecurite').addClass("selected")
+ </script>
+ </body>
+ </html>

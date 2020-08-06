@@ -1,0 +1,132 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light nav-perso">
+<a class="navbar-brand" style="font-family: 'Dancing Script', cursive; font-weight: 700;" href="/">
+        Christine & Cie
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav  mx-auto">
+    <a class="nav-item nav-link" href="#">
+            <img src="/img/favicon-2.png" width="30" height="30" alt="">
+    </a>
+    <a class="nav-item nav-link" id="navIndex" href="/">Accueil <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" id="navApropos" href="/a-propos">Qui sommes nous</a>
+    
+    <a class="nav-item nav-link" href="https://christinecie.learnybox.com/bunkers/">Accéder aux formations</a>
+    <a class="nav-item nav-link" id="navBlog" href="/blog">Blog</a>
+    </div>          
+  </div>
+</div>
+</nav>
+<div class="container">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+                <button type="button" class="close fade show" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+                <button type="button" class="close fade show" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </div>
+        <% } %>
+    </div>
+
+     <!-- <a class="nav-item nav-link" id="cd-signin" href="#">Connexion</a> -->
+  <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+  <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+    <ul class="cd-switcher">
+      <li><a href="#0">Connexion</a></li>
+      <li><a href="#0">Nouvel Utilisateur</a></li>
+    </ul>
+
+    <div id="cd-login"> <!-- log in form -->
+      <form class="cd-form" action="/login" method="POST">
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="signin-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="signin-email"  name="username" type="text" placeholder="Utilisateur">
+          <span class="cd-error-message">Message d'Erreur !</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-password" for="signin-password">Mot de Passe</label>
+          <input class="full-width has-padding has-border" id="signin-password" type="text" name="password" placeholder="Mot de Passe">
+          <a href="#0" class="hide-password">Cacher</a>
+          <span class="cd-error-message">Message d'Erreur !</span>
+        </p>
+
+        <!--<p class="fieldset">
+          <input type="checkbox" id="remember-me" checked>
+          <label for="remember-me">Se souvenir de moi</label>
+        </p>-->
+
+        <p class="fieldset">
+          <!-- <input class="full-width" type="submit" value="Connexion"> -->
+          <button class="button-form full-width"> Connexion </button>
+        </p>
+      </form>
+      
+      <p class="cd-form-bottom-message"><a href="#0">Mot de Passe Oublié</a></p>
+      <!-- <a href="#0" class="cd-close-form">Close</a> -->
+    </div> <!-- cd-login -->
+
+    <div id="cd-signup"> <!-- sign up form -->
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-username" for="signup-username">Nom d'Utilisateur</label>
+          <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Nom d'Utilisateur">
+          <span class="cd-error-message">Error Message d'Erreur !</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="signup-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+          <span class="cd-error-message">Error Message d'Erreur !</span>
+        </p>
+
+        <p class="fieldset">
+          <label class="image-replace cd-password" for="signup-password">Mot de Passe</label>
+          <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Mot de Passe">
+          <a href="#0" class="hide-password">Cacher</a>
+          <span class="cd-error-message">Message d'Erreur !</span>
+        </p>
+
+        <p class="fieldset">
+          <input type="checkbox" id="accept-terms">
+          <label for="accept-terms">J'ai lu et j'accepte les <a href="#0">Termes et Conditions</a></label>
+        </p>
+
+        <p class="fieldset">
+          <input class="full-width has-padding button-form " type="submit" value="Nouveau Compte">
+        </p>
+      </form>
+
+      <!-- <a href="#0" class="cd-close-form">Close</a> -->
+    </div> <!-- cd-signup -->
+
+    <div id="cd-reset-password"> <!-- reset password form -->
+      <p class="cd-form-message">Entrez votre addresse mail pour recevoir un lien servant à créer un nouveau mot de passe.</p>
+
+      <form class="cd-form">
+        <p class="fieldset">
+          <label class="image-replace cd-email" for="reset-email">E-mail</label>
+          <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+          <span class="cd-error-message">Message d'Erreur !</span>
+        </p>
+
+        <p class="fieldset">
+          <input class="full-width has-padding" type="submit" value="Reset password">
+        </p>
+      </form>
+
+      <p class="cd-form-bottom-message"><a href="#0">Retour au panneau de connexion</a></p>
+    </div> <!-- cd-reset-password -->
+    <a href="#0" class="cd-close-form">Fermer</a>
+  </div> <!-- cd-user-modal-container -->
+</div> <!-- cd-user-modal -->
+

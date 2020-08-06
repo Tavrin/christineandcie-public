@@ -1,0 +1,21 @@
+<div class="col-md-3 pr-4">
+
+        <nav class="navLeft menu" data-pjax="">
+            <h3 class="menu-heading">
+                Paramètres
+            </h3>
+        
+            <a class="js-selected-navigation-item menu-item" id="navProfil" href="/parametres/profil">Profil</a>
+
+            <a class="js-selected-navigation-item menu-item" id="navCompte" href="/parametres/compte">Compte</a>
+        
+        
+              <!-- <a class="js-selected-navigation-item menu-item" id="navNotif" href="/parametres/notifications">Notifications</a> -->
+        
+        
+              <!-- <a class="js-selected-navigation-item menu-item" id="navPaiement" href="/parametres/paiement">Paiement</a> -->
+             <% if (user && user.isDev == true){%><a class="js-selected-navigation-item menu-item" id="navSecurite" href="/parametres/developpeurs">Développeurs</a><%}%>
+        
+          </nav>
+
+</div>

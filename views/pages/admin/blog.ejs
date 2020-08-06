@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <style>
+  body {
+    background: #F0F1F3; 
+  }
+  </style>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/admin/nav.css">
+</head>
+
+<body cz-shortcut-listen="true">
+
+
+
+ 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation de Suppression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voulez vous vraiment supprimer cet article ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modalNon" data-dismiss="modal">Non</button>
+        <button type="button" class="btn btn-danger" id="modalOui" data-dismiss="modal">Oui</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% include ../../partials/navAdmin.ejs %>
+
+    
+  <div class="container-fluid mx-auto text-center">
+  <div class="row ">
+<h1 class="text-center mr-auto mt-5 ml-5 titre-categorie">Administration Blog</h1>
+<a class="btn btn-lg  btn-admin-action ml-auto mb-5 mt-5 mr-5" href="/blog/new"> Nouvel article</a>
+</div>
+<div class="row">
+  <div id="spinner"></div>
+<table class="mx-auto table-hover table-striped table table-responsive-sm">
+  <thead class="thead-dark custom-table-1">  
+    <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="posts">
+  </tbody>
+    </table>
+         <button class="btn btn-primary ml-4" style="background-color: #396CA0; border: none" id="toggle">Editer l'ordre</button>
+        
+      
+  </div>
+</div>
+</div>
+</div>
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="/vendor/jquery-ui/external/jquery/jquery.js"></script>
+<script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src="/js/main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M" crossorigin="anonymous"></script>
+<script>
+feather.replace()
+</script>
+<script src="/js/admin/blog.js"></script>
+<script>
+var edition = false
+$(document).ready(function () {
+  
+  $('#toggle').on("click", function() {
+        //check if sortable() is enabled and change and change state accordingly
+      // Getter
+      // var disabled = $("tbody").sortable( "option", "disabled" );
+      // if (disabled) {
+        console.log(edition)
+        if(edition == false){
+          // $("tbody").sortable("enable");
+          
+          $("tbody").sortable()
+          sortEnable("tbody");
+        console.log('Sortable is now Enabled!!');
+        }
+        else{
+          
+          sortDisable("tbody");
+        console.log('Sortable is now Disabled!!');
+        }
+      // }
+      // else {
+      //   $("tbody").sortable("disable");
+      //   console.log('Sortable is Disabled');
+      // }
+    });
+
+  
+    $("#navAdminBlog").addClass("select");
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
+});
+
+ function sortEnable( target ) {
+        edition = true;
+        $( target ).sortable("enable");
+        $('#toggle').html("Enregistrer").css("background-color", "#1f713c");
+
+    }
+    function sortDisable( target ) {
+      let ordre = []
+      edition = false;
+        $( target ).sortable("disable");
+        $(".ligne").each(function(i,article){
+          ordre[i] = $(article).data("id");
+        })
+
+        ordre = ordre.reverse()
+
+        for(let i = ordre.length; i >= 0; i -- ){
+          var form = new FormData();
+			// form.append("id", $('#category').val());
+			form.append("order", i );
+
+			
+			var settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "/api/articles/"+ordre[i],
+				"method": "PUT",
+				"processData": false,
+				"contentType": false,
+				"mimeType": "multipart/form-data",
+				"data": form
+			}
+			$.ajax(settings).done(function (response) {
+				console.log(response)
+          var parsed_data = JSON.parse(response)
+          $('.container-flash').html(`<div class="alert alert-success" role="alert">
+                                    La réorganisation à été faite avec succès
+                                    <button type="button" class="close fade show" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </div>`)
+          
+					console.log(parsed_data)
+				});
+
+        }
+        
+        console.log(ordre)
+        let len = ordre.length
+        console.log(len)
+        $('#toggle').html("Editer l'ordre").css('background', '#396CA0')
+    }
+//   function toggleEdit(){
+//     if (edition == true){
+//       edition = false
+//       if(edition == true){
+//   $('tbody').sortable();
+// }
+//       console.log("edition = " + edition)
+//     }
+//     else{
+//       edition = true;
+//       if(edition == true){
+//   $('tbody').sortable();
+// }
+//       console.log("edition = " + edition)
+//     }
+    
+//   }
+
+</script>
+
+
+
+
+</body>
+</html>

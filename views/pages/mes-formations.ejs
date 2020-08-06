@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+     <div class="wrapper" style="height:100vh;">
+       <div class="row">
+        
+        <!-- <div class="col-3 float-left pr-3" style="border-right: 1px solid #dbdbdb!important; height: 100vh;">
+                <img alt="" width="230" height="230" class="avatar width-full rounded-2" src="<%if(currentUser.avatar){%><%=currentUser.avatar%><%}else{%>/upload/img-profil/placeholder.png<%}%>">
+<div class="py-3">
+                <span class="p-name vcard-fullname d-block"></span>
+            <span class="p-nickname vcard-username d-block" id="userLevel"></span>
+        </div>
+          <div class="d-inline-block mb-3 user-profile-bio">
+                
+              </div>
+              <div class="under-info">
+                   
+              </div>
+        </div> -->
+        <div class="col pl-2">
+            <h2 class="text-center zone-titre pt-3">Mes Programmes</h2>
+            <div class="card-deck">
+            <%if (user.formations){user.formations.forEach(function(formation){%>
+              <div class="card" style="max-width: 18rem;">
+                  <img class="card-img-top" src="<%=formation.thumbnail%>" style=" height: 10rem; object-fit:cover" alt="Image de la formation">
+                  <div class="card-body">
+                    <h5 class="card-title"> <%=formation.name%></h5>
+                    <p class="card-text"><%=formation.description%></p>
+                    <a href="/formations/mes-formations/<%=formation._id%>" class="btn btn-outline-secondary">Accéder</a>
+                  </div>
+                </div>
+              
+              <%})%></div> <%} else{%> 
+                Aucune formation 
+                <%}%>
+        </div>
+      </div>
+     </div>
+  
+
+ <div class="bottom"><% include ../partials/footer.ejs %></div>
+ <script src="/js/profil.js"></script>
+ <script>
+   $('#navProfil').addClass("selected")
+ </script>
+ </body>
+ </html>

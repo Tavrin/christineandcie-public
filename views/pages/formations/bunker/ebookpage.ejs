@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../../partials/header.ejs %>
+
+  <link rel="stylesheet" href="/stylesheets/formations.css">
+
+  <style>
+
+      body{
+        background-image: url("/img/ebook.jpg") !important;
+        background-attachment: fixed !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        min-width: 100% !important;
+        min-height: 100vh !important;
+         width: 100% !important;  
+         background-position: 50% 100% !important;
+      }
+        </style>
+</head>
+
+<body>
+        <body>
+                <div class="row mx-auto text-center">
+                        <div class="col-md-7 mx-auto" style="background: #FFFFFF; margin-top: 20vh; margin-bottom: 50vh; padding: 10vh"> <h1 style="text-align: center; color:#526173; font-size: 72px;">Merci pour votre <br> inscription !<br></h1>
+                            <h3 style="text-align: center;"><span style="color: rgb(168, 176, 185);">Votre lien de téléchargement est disponible ci-dessous :</span><br></h3>
+                            <a  href="/docs/doc-7-missions.pdf" download="Du stress au travail au Burnout, 7 missions pour réagir.pdf" class="btn btn-ebook">
+                                    <i class="fa fa-angle-right" style="font-size:18px;color:#ffffff;margin-right:26px;"></i><span>TÉLÉCHARGEZ VOTRE GUIDE D'APPRENTISSAGE RAPIDE</span>
+                            </a>
+                        </div>
+                        
+                    </div>
+
+
+    </body>
+  <% include ../../../partials/nav.ejs %>
+ 
+ <% include ../../../partials/footer.ejs %>
+ <script>
+        $("#navFormations").addClass("active")
+        </script>
+  </body>
+  </html>

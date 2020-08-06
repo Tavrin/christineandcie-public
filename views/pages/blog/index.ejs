@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <style>
+  pre.ql-syntax {
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+}
+  </style>
+  <link rel="stylesheet" href="/stylesheets/blogIndex.css">
+
+  <link rel="canonical" href="https://christineandcie.fr/blog/1">
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+  <div class="container-fluid" id="blog-container" style="background:#F6F6F6;" >
+  <!-- <h1 class="text-center m-3 display-4 blog-page-titre">Blog</h1> -->
+  <div class="header__bottom mx-auto">
+  <div class="header__bottom-inner">
+      <nav class="menu-main-navigation-container">
+          <ul id="menu-main-navigation" class="menu">
+    <li id="menu-item-10607" class="dropdown menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10607"><a href="/blog/categorie/lifestyle/1">Lifestyle</a></li>
+    <li id="menu-item-10608" class="dropdown menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10608"><a href="/blog/categorie/sante/1">Santé</a></li>
+    <li id="menu-item-10609" class="dropdown menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10609"><a href="/blog/categorie/bien-etre/1">Bien-être</a></li>
+    <li id="menu-item-10610" class="dropdown menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10610"><a href="/blog/categorie/travail/1">Travail</a></li>
+    <li id="menu-item-10710" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10710"><a href="/blog/categorie/sport/1">Sport</a></li>
+    <li id="menu-item-10711" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10711"><a href="/blog/categorie/beaute/1">Beauté</a></li>
+    </ul>
+</nav>
+</div>
+</div>
+  <div id="carouselExampleIndicators" class="carousel slide mx-auto" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <%if(blogposts.length >= 3){%>
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+          <%} if(blogposts.length == 2){%>
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+          <%}%>
+
+
+          
+        </ol>
+        <div class="carousel-inner">
+          <%for(var i = 0; i < 3; i++){%>
+            <%if(blogposts[i] != undefined){%>
+            <div id="<%=blogposts[i]._id%>" class="carousel-item <%if(i == 0){%>active<%}%>" style="background-image: url(<%=blogposts[i].thumbnail %>);">
+              <img class="d-block w-100" src="<%=blogposts[i].thumbnail %>" alt="First slide">
+              <div class="carousel-caption d-none d-md-block mx-auto">
+                    <a href="/blog/view/<%=blogposts[i]._id %>"> <h2 class="carousel-titre"><%=blogposts[i].title%></h2></a>
+                    <p><%=blogposts[i].description%></p>
+                  </div>
+            </div>
+            <%}%>
+            <%}%>
+          <!-- <div id="first-image" class="carousel-item" style="background-image: url(/img/bunker-view2.jpg);">
+              <img class="d-block w-100" src="/img/bunker-view2.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block mx-auto">
+                    <a href="#"> <h2 class="carousel-titre">Titre Article</h2></a>
+                    <p>Courte description</p>
+                  </div>
+            </div>
+          <div id="second-image" class="carousel-item active" style="background-image: url(/img/montagne1.jpg);">
+            <img class="d-block w-100" src="/img/montagne1.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block mx-auto">
+                    <a href="#"> <h2 class="carousel-titre">Titre Article</h2></a>
+                    <p>Courte description</p>
+                  </div>
+          </div>
+          <div id="third-image" class="carousel-item" style="background-image: url(/img/bg-01.jpg);">
+            <img class="d-block w-100" src="/img/bg-01.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block mx-auto">
+                    <a href="#"> <h2 class="carousel-titre">Titre Article</h2></a>
+                    <p>Courte description</p>
+                  </div>
+          </div> -->
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="flex-wrapper">
+ <% blogposts.forEach(function(blogpost){ %>
+        <div class="article-card blog-post">
+                <a href="/blog/view/<%=blogpost._id %>" class="article-card-image" style="background-image:url('<%=blogpost.thumbnail %>'); background-size: cover; background-position: center center;">
+                    <!-- <img class="img-fluid blog-thumbnail" style="display: none" src="<%=blogpost.thumbnail %>"> -->
+                </a> 
+            <div class="article-card-infos">
+                <h2 class="blog-title"><a href="/blog/view/<%=blogpost._id %>"><%=blogpost.title %></a></h2>
+                <div class="blog-info">
+                    <span class="blog-category"><a href="/blog/categorie/<%=blogpost.category%>/1"><%=blogpost.category%></a></span> <span class="blogpost-author"><% if(blogpost.author && blogpost.author[0]!=undefined){%><%=blogpost.author[0].realName%><%}else{%>Christine and Cie<%}%></span>
+                </div>
+                
+                <div class="blog-description">
+                    <p>
+                    <%-blogpost.description%>
+                
+                    </p>
+                </div>
+                <a class="btn btn-outline-primary mb-4 mt-1 blog-button" href="/blog/view/<%=blogpost._id %>">Lire la suite</a>
+ 
+            </div>
+        </div>
+        
+       <!-- <div class="fade_rule"></div>  -->
+ <% }) %>
+</div>
+ <% if (pages > 0) { %>
+    <div class =" row">
+    <nav aria-label="Page navigation example" class="mx-auto mt-5">
+    <ul class="pagination">
+        <% if (current == 1) { %>
+            <li class="disabled page-item"><a class="page-link">Début</a></li>
+        <% } else { %>
+            <li class="page-item"><a class="page-link" href="/blog/1">Début</a></li>
+        <% } %>
+        <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+        <% if (i !== 1) { %>
+            <li class="disabled page-item"><a class="page-link">...</a></li>
+        <% } %>
+        <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+            <% if (i == current) { %>
+                <li class="active page-item"><a class="page-link"><%= i %></a></li>
+            <% } else { %>
+                <li class="page-item"><a class="page-link" href="/blog/<%= i %>"><%= i %></a></li>
+            <% } %>
+            <% if (i == Number(current) + 4 && i < pages) { %>
+                <li class="disabled page-item"><a class="page-link">...</a></li>
+            <% } %>
+        <% } %>
+        <% if (current == pages) { %>
+            <li class="disabled page-item"><a class="page-link">Fin</a></li>
+        <% } else { %>
+            <li class="page-item"><a class="page-link" href="/blog/<%= pages %>">Fin</a></li>
+        <% } %>
+    </ul>
+</nav>
+</div>
+<% } %>
+ </div>
+ <% include ../../partials/footer.ejs %>
+ <script>
+  $("#navBlog").addClass("active")
+ </script>
+  </body>
+  </html>

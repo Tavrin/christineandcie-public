@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/about.css">
+
+  <link rel="canonical" href="https://christineandcie.fr/a-propos/">
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+      <section id="zone-about" class="text-center pt-5">
+        <div class="container">
+          
+          <div class="row">
+              
+              <div class="col-lg-8 col-sm mx-auto showcase-text">
+                  <h2 class="zone-titre pb-5">Notre Mission</h2>
+                  <p class="mb-5 texte-mission"><strong>Christine & Cie</strong> a été fondée par deux passionnées en quête de réponses sur les déterminants de la réussite personnelle et professionnelle… et du bien-être en général. </p>
+
+                  <p class="mb-5 texte-mission"><strong>Christel</strong>, Psychologue du travail et <strong>Marine</strong>, Assistante de Service Social se sont rencontrées en Mars 2015. Suite à cette rencontre, une amitié est née. Plus qu’une amitié, une volonté commune de permettre à chacun de réaliser son plein potentiel.</p>
+                 
+                  <div class="row" id="christelAbout">
+                    <div class="col-md-4"><img src="/img/christel1.jpeg" class="img-fluid pb-2" alt=""> </div>
+                    <div class="col-md-8"> <p class="texte-mission" > La première étant spécialisée dans le domaine du <strong>travail</strong>, elle souhaitait faire valoir le bien-être au travail « moins de stress, plus d’efficacité et de <strong>réussite professionnelle</strong> ». <br> <br> De la gestion du stress au processus de recrutement, son champ d’action s’étend des particuliers aux grandes entreprises.</p></div>
+                  </div>  
+                  
+                  <div class="row d-flex" id="marineAbout">
+                      <div class="col-md-4 order-md-2"> <img src="/img/marine3.png" class="img-fluid pb-2" alt=""></div>
+                      <div class="col-md-8 order-md-1"> <p class=" texte-mission" > La seconde étant spécialisée dans le domaine du <strong>social</strong>, de l'insertion et de l’animation, elle souhaitait soutenir les actifs dans leurs démarches en lien avec l’emploi, la santé et les problématiques personnelles (difficultés financières et relationnelles). <br><br> Son champ d’action s’étend du diagnostic des problèmes à la mise en place de <strong>solutions adaptées</strong>. </p> </div>
+                      
+                    </div>   
+                      
+                     
+                      
+                              <p class="mb-5 texte-mission">Christine & Cie c’est aussi une équipe dédiée à votre bien être. De l’épanouissement professionnel à l’épanouissement personnel, nous sommes investis pour vous accompagner vers votre réussite.</strong>.</p>
+                </div>
+            </div>
+          </div>
+      </section>
+      <section id="zone-image" class="text-center pt-5">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 ">
+                    <div class="row text-center"> 
+                            <div class="col "> 
+                <img src="/img/christel2.png" id="christel" class="m-3 img-bio" alt="">
+                <img src="/img/marine3rond.png" id="marine" class="m-3  img-bio" alt="">
+                <img src="/img/fabien2rond n&b.png" id="fabien" class="m-3  img-bio" alt="">
+                    </div></div>
+                <div class="row mx-auto">
+                        <div class="col ">
+                <img src="/img/maeva1 n&b.png" id="maeva" class="m-3  img-bio" alt="">
+                <img src="/img/julia3.png" id="julia" class="m-3  img-bio" alt="">
+                <img src="/img/etienne.png" id="etienne" class="m-3  img-bio" alt="">
+                </div></div>
+                <!-- <img src="/img/photo-groupe-1.png" usemap="#image-map"  class="img-fluid" alt="Responsive image">
+                    <map name="image-map" id="imagemap">
+                        <area target="_self" id="christel" alt="Christel" title="Christel" coords="459,71,633,180" shape="rect">
+                        <area target="" alt="Marine" id='marine' title="Marine" coords="322,191,510,318" shape="0">
+                        <area target="" alt="fabien" id='fabien' title="fabien" coords="438,29,275,177" shape="rect">
+                    </map> -->
+            </div>
+            <div class="col-lg-6 col-sm-12 mx-auto">
+                    <h2 class="zone-titre text-center" style="font-size: 3rem;" id="bio-titre">Christine & Cie à votre service !</h2>
+                    <div class="mx-auto mt-4 pt-4 col-lg-8 col-md-11">
+                            <h3 class="zone-titre text-center" style="font-size: 1.6rem" id="bio-details">Cliquez sur nos photos pour en savoir plus sur nous…</h3>
+                    </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+  <% include ../partials/footer.ejs %>
+  <script>
+  $("#navAbout").addClass("active")
+ </script>
+ <script src="/vendor/imageMapResizer.min.js"></script>
+<script src="/js/about.js"></script>
+ </body>
+ </html>

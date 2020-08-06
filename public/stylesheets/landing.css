@@ -1,0 +1,375 @@
+
+/* ################## General ##################*/
+body{
+  /* background-image: url("../img/montagne1bis.jpg") !important; */
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  min-width: 100% !important;
+  min-height: 100vh !important;
+   width: 100% !important;  
+   background-position: 50% 100% !important;
+   background-color: rgb(247, 247, 247);
+}
+.zone-titre{
+    font-family: 'OldStandard-Bold' !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 4rem;
+  }
+
+  .hover{
+    opacity: 0.7 !important;
+    position: absolute !important;
+    background: rgb(36, 36, 36) !important;
+  }
+@media(max-width:900px){
+  
+
+    .zone-titre{
+        font-size: 3rem;
+    }
+    body{
+      /* background-image: url("../img/eberhard-grossgasteiger-1061663-unsplash2.jpg") !important; */
+      
+      background-attachment: fixed !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      min-width: 100% !important;
+      min-height: 100vh !important;
+       /* width: 100% !important;   */
+      background-position: center center !important;
+      padding-top: 0;
+    }
+}
+/* ################## Fin General ##################*/
+
+/* ################## Zone landing ##################*/
+
+.img-ebook{
+  width: 120%;
+}
+
+@media(max-width:1440px){
+  .img-ebook{
+    width: 120%;
+  }
+}
+
+@media(max-width:900px){
+  .img-ebook{
+    width: 100%;
+    padding-bottom: 2%;
+  }
+}
+
+@media(max-width:450px){
+  .img-ebook{
+    width: 100%;
+  }
+}
+.landing-image{
+    /* background-image: url("../img/montagne1bis.jpg"); */
+    /* margin-top: -3%; */
+    /* padding-top: 3%; */
+    /* background-color: rgba(14, 13, 9, 0.082); */
+    /* position: relative; */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+      background-size: cover;
+      min-width: 100%;
+      min-height: 25Vh;
+    width: 100%;  
+    background-position: 50% 400%;
+  }
+.landing-texte{
+  font-family: 'OldStandard-Regular';
+    color: #404050;
+    /* color: #1d1c1c; */
+    font-weight: 400;
+    font-size: 1.9rem;
+  }
+  .landing-title-small{
+    font-size: 1.4rem;
+  }
+
+  .landing-title-smaller{
+    font-size: 1.2rem;
+  }
+  @media(max-width:760px){
+    .landing-title-small{
+      font-size: 1rem;
+    }
+
+    .landing-title-smaller{
+      font-size: 0.8rem;
+    }
+    .landing-image{
+        /* background-image: url("../img/eberhard-grossgasteiger-1061663-unsplash2.jpg"); */
+        /* margin-top: -3%; */
+        padding-top: 3%;
+        /* position: relative; */
+        /* background-attachment: fixed; */
+        /* background-attachment: scroll; */
+        /* background-repeat: no-repeat; */
+          /* background-size: cover; */
+        min-width: 100%;
+        min-height: 100Vh;
+        /* background-color: rgba(14, 13, 9, 0.082); */
+        /* width: 100%;   */
+        /* background-position: 50% 400%; */
+      }
+   
+    .landing-titre{
+      font-size: 3rem;
+    }
+    .landing-texte{
+      font-size: 1.2rem;
+    }
+  }
+/* ################## Fin zone landing ##################*/
+
+/* ################## Zone a propos ##################*/
+
+
+  .about-hover{
+    opacity: 0.7 !important;
+    position: absolute !important;
+    background: rgb(36, 36, 36) !important;
+  }
+
+.zone-about-contenu{
+    color: white !important;
+  }
+  .filtre-zone-about, .filtre-zone-about-2{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    position: absolute;
+    background: rgb(45, 47, 61);
+    transition: 0.3s;
+  }
+  
+  
+  .filtre-zone-about:hover, .filtre-zone-about-2:hover  {
+  
+    opacity: 0.7;
+    position: absolute;
+    background: rgb(36, 36, 36);
+  }
+  
+
+  .colonne-bande-2-gauche{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .hover-bouton-about{
+    opacity: 0.8  !important;
+    background: rgb(19, 17, 17)!important;
+  }
+
+  #zone-about{
+    position: relative;
+    background-image: url("../img/denys-nevozhai-191635-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  min-height: 100%;
+    /* background: #FFF4EB; */
+    /* background: #e9eef3; */
+    /* background: linear-gradient(to bottom, #d6f855, #fff0c7); */
+    /* margin-top: 0.5%; */
+    /* margin-bottom: 0.5%; */
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+  }
+
+  #zone-about-2{
+    position: relative;
+    background-image: url("../img/bunker-view2.jpg");;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100%;
+    /* background: #FFF4EB; */
+    /* background: #e9eef3; */
+    /* background: linear-gradient(to bottom, #d6f855, #fff0c7); */
+    /* margin-top: 0.5%; */
+    /* margin-bottom: 0.5%; */
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+  }
+
+  .btn-ebook{
+    text-transform: uppercase;
+    background: #3B5998;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    border: 0px solid;
+    border-color: #000000;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 0px #000000;
+    -moz-box-shadow: 0px 0px 0px #000000;
+    padding-top: 16px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: 0.1s;
+  }
+
+  .btn-ebook:hover, .btn-ebook:active{
+    background: #2A9ABF;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    border-color: #ccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0px 0px 10px #33476b;
+    padding-top: 16px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  
+  .zone-about-titre{
+    color: rgb(40, 50, 56);
+  }
+  .zone-about-texte{
+    color: rgb(40, 50, 56);
+    font-size: 1.56rem !important;
+  }
+
+  .zone-about-texte-2{
+    font-weight: 500;
+    font-size: 1.36rem !important;
+  }
+  @media(max-width:760px){
+    .btn-ebook{
+      max-width: 100%;
+      font-size: 16px;
+      white-space: normal;
+    }
+    #zone-about{
+      /* margin-top: 2% !important; */
+      /* margin-bottom: 3% !important; */
+    }
+
+    .colonne-bande-2-gauche{
+      padding-right: 0;
+      padding-bottom: 1%;
+    }
+  }
+
+/* ################## Fin zone a propos ################## */
+
+/* ################## Zone bunker ################## */
+@media(max-width:760px){
+  #zone-bunker{
+    margin-top: 2px !important;
+  }
+}
+
+#zone-bunker{
+  background-position: center center;
+    position: relative;
+    color: white;
+    /* margin-bottom: 0.5%; */
+    background-image: url("../img/montagne1bis.jpg") !important;
+    background-size: cover;
+    /* background: #8A503D; */
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+  }
+
+#bouton-bunker:hover{
+    color: rgb(56, 71, 80);
+  }
+  .filtre-zone-bunker{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5 ;
+    background: rgb(77, 55, 41);
+    position: absolute;
+    
+    transition: 0.3s;
+  }
+
+  .bunker-hover{
+    opacity: 0.7 !important;
+    position: absolute !important;
+    background: rgb(36, 36, 36) !important;
+  }
+
+  .hover-bouton-bunker{
+    opacity: 0.7  !important;
+    background: rgb(20, 6, 2)  !important;
+  }
+  .filtre-zone-bunker:hover {
+  
+    opacity: 0.7;
+    position: absolute;
+    background: rgb(36, 36, 36);
+  }
+  /* ################## Fin zone bunker ################## */
+
+
+
+
+  /* ################## Zone avenir ################## */
+    #zone-avenir{
+    /* background: rgb(56, 71, 80); */
+    /* color: #202020;
+    padding-top: 15% !important;
+    padding-bottom: 15% !important; */
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-image: url("/img/pexels-photo-296282.jpg");
+    background-position: center center;
+    background-size: cover;
+    /* background: #7BCDC8; */
+    /* background: #e6d6c7; */
+    padding-top: 10% !important;
+    padding-bottom: 5% !important;
+    border-bottom: 1px solid rgba(0,0,0,.0785)!important;
+  }
+
+
+  .filtre-zone-avenir {
+  
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    position: absolute;
+    background: rgb(45, 47, 61);
+    transition: 0.3s;
+  }
+
+  .filtre-zone-avenir:hover {
+    opacity: 0.7;
+    position: absolute;
+    background: rgb(36, 36, 36);
+  }
+
+  .avenir-hover{
+    opacity: 0.7 !important;
+    position: absolute !important;
+    background: rgb(36, 36, 36) !important;
+  }
+
+  .hover-form-avenir{
+    opacity: 0.8  !important;
+    background: rgb(19, 17, 17)!important;
+  }
+   /* ################## Fin zone avenir ################## */
+

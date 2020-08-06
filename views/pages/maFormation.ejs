@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../partials/header.ejs %>
+  <!-- <link rel="stylesheet" href="/stylesheets/profile.css"> -->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/formations/nav.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/formations/module.css">
+  <style>
+  .picture-scrolled{
+
+width: 80px;
+height: 80px;
+}
+.nav-link{
+  color:rgb(194, 192, 192) !important;
+}
+
+.nav-link.active{
+  color:rgb(247, 247, 247) !important;
+}
+  </style>
+</head>
+
+<body>
+    <%include ../functions/truncate.ejs%>
+    <% include ../partials/navFormation.ejs %>
+     <!-- <div class="wrapper" style="height:100vh;">
+       <div class="row">
+         -->
+        <!-- <div class="col-3 float-left pr-3" style="border-right: 1px solid #dbdbdb!important; height: 100vh;">
+                <img alt="" width="230" height="230" class="avatar width-full rounded-2" src="<%if(currentUser.avatar){%><%=currentUser.avatar%><%}else{%>/upload/img-profil/placeholder.png<%}%>">
+<div class="py-3">
+                <span class="p-name vcard-fullname d-block"></span>
+            <span class="p-nickname vcard-username d-block" id="userLevel"></span>
+        </div>
+          <div class="d-inline-block mb-3 user-profile-bio">
+                
+              </div>
+              <div class="under-info">
+                   
+              </div>
+        </div> -->
+        <!-- <div class="col-9 float-left pl-2">
+            <h2 class="text-center pt-3"><%=formation.name%></h2>
+        </div>
+      </div>
+     </div> -->
+  <div class="container-fluid">
+     <div class="row  pb-5 mb-5" id="zone-contenu">
+            <div class=" mx-auto col-sm-6 col-md-6  module-zone">
+                <div class="nav-zone mb-5 pb-5"></div>
+                  <div class="module-title"></div>
+                    <div class="module-thumbnail"> </div>
+                <div class="module-content"> </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="bottom"><% include ../partials/footer.ejs %></div>
+ <script src="/js/maFormation.js"></script>
+ <script>$(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    
+    });</script>
+    
+ </body>
+ </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <style>
+  body {
+    background: #F0F1F3; 
+  }
+  </style>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/admin/nav.css">
+</head>
+
+<body cz-shortcut-listen="true">
+
+
+
+ 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation de Suppression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voulez vous vraiment supprimer cet article ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modalNon" data-dismiss="modal">Non</button>
+        <button type="button" class="btn btn-danger" id="modalOui" data-dismiss="modal">Oui</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% include ../../partials/navAdmin.ejs %>
+
+    
+  <div class="container-fluid mx-auto">
+  <div class="row ">
+<h1 class="text-center mr-auto mt-5 ml-5 mb-5 titre-categorie">Messagerie</h1>
+<!-- <a class="btn btn-lg  btn-admin-action ml-auto mb-5 mt-5 mr-5" href="/blog/new"> Nouvel article</a> -->
+</div>
+<div class="row">
+        <div class="col-md-2"></div>
+    <div class="col-md-5">
+      <%messages.forEach(function(message){%>
+        <div class="card card-messagerie">
+                <div class="card-body">
+                  <h6 class="card-title d-flex text-muted"><%= message.name%> <span class="ml-auto"><%=moment(message.date).format("LLL")%></span></h6>
+                  <h6 class="card-subtitle mb-2 "><%= message.subject%></h6>
+                  <p class="card-text"><%= message.message.substring(0,70) %></p>
+                </div>
+              </div>
+        <%})%>
+  </tbody>
+    </table>
+         
+        
+      </div>
+      <div class="col"></div>
+  </div>
+</div>
+</div>
+</div>
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="/vendor/jquery-ui/external/jquery/jquery.js"></script>
+<script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src="/js/main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M" crossorigin="anonymous"></script>
+<script>
+feather.replace()
+</script>
+<script src="/js/admin/messagerie.js"></script>
+<script>$(document).ready(function () {
+    $("#navAdminMessage").addClass("select");
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
+});</script>
+</body>
+</html>

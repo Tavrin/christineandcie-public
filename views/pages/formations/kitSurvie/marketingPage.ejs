@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../../partials/header.ejs %>
+  <style>
+      body{
+          padding-top: 0 !important;
+      }
+  pre.ql-syntax {
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+}
+  </style>
+  <link rel="stylesheet" href="/stylesheets/blogIndex.css">
+  <link rel="stylesheet" href="/stylesheets/formations/kitMarketing.css">
+</head>
+
+<body>
+
+  <% include ../../../partials/nav.ejs %>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Il vous suffit de rentrer les informations ci-dessous afin d'obtenir ce pack de qualité gratuit.</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <form method="POST" action="/contactSave">
+                        <div class="form-group form-row text-left">
+                                <div class="col-lg-12 col-sm-10 mx-auto">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control form-control-lg" name="nom" id="nom" placeholder="Nom" required>
+                                </div>
+                              </div>
+                        <div class="form-group form-row text-left">
+                                <div class="col-lg-12 col-sm-10 mx-auto">
+                          <label for="email">Adresse e-mail</label>
+                          <input type="email" class="form-control form-control-lg" name="email" id="email" aria-describedby="emailHelp" placeholder="Adresse e-mail" required>
+                          <small class="form-text text-muted">En indiquant votre adresse mail, vous acceptez de recevoir des offres commerciales de notre part. Vous pouvez vous désinscrire à tout moment en nous adressant un mail et à travers les liens de désinscription <input type="checkbox" name="consent" required id="consent"></small>
+                          <hr>
+                          <small id="emailHelp" class="form-text text-muted">Vos informations resteront privées et confidentielles</small>
+                                </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-lg-6 col-sm-10 mx-auto">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block bouton-newsletter">S'inscrire</button>
+                    </div>
+                </div>
+                      </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  <div class="container-fluid" id="zone-container" >
+    <div class="row">
+            <!-- <img class="d-block mx-auto img-fluid" id="bunker-image" src="/img/bunker-view2.jpg"> -->
+    </div>
+        <div class="wrapper">
+    <!-- <h1 class="zone-titre  text-center pb-5 pt-5">Découvrez ici notre premier programme</h1> -->
+
+
+    <h1 class="zone-titre titre-formation text-center pt-5 pb-5">Kit de Survie <span style="font-size: 2rem;font-weight: 400; font-family: 'Work Sans', sans-serif;"> <br> Gérer son stress et gagner en assurance ?</span> </h1>
+              
+        <div class="row mx-auto text-center">
+                
+            <div class="col-md"><h3 class="zone-titre text-center pt-5 pb-5">En suivant ce programme vous réussirez à : </h3>
+                </div>
+           
+        </div>
+        <div class="row justify-content-center pb-5">
+                <div class="col-lg-5">
+                        <ul class="text-left liste">
+                                <li class="liste-item">Comprendre les raisons de votre stress, de votre mal être </li>
+                                <li class="liste-item">Faire le tri dans vos pensées, dans votre vie</li>
+                                <li class="liste-item">Prendre du recul pour vous concentrer sur l’essentiel</li>
+                                <li class="liste-item">Vous rebooster grâce à une méthode simple et efficace </li>
+                                <li class="liste-item">Vous renforcer, retrouver confiance en vous et vous affirmer </li>
+                                <li class="liste-item">Gagner en efficacité et atteindre vos objectifs</li>
+                            </ul>
+                        
+                </div>
+                <div class="col-lg-5">
+                    <video id="my-video"   class='video-js vjs-default-skin vjs-big-play-centered' controls preload='auto' width='512' height='288'>
+                        <source src="/video/tunnel_kit_de_survie_opt.mp4">
+                    </video>
+                    <h4 class="pt-3 zone-titre text-center" style="font-size: 2rem">Je suis prêt à : </h4>
+                    <ul class="text-left liste">
+                        <li class="liste-item">Comprendre les raisons de votre stress, de votre mal être </li>
+                        <li class="liste-item">Faire le tri dans vos pensées, dans votre vie</li>
+                        <li class="liste-item">Prendre du recul pour vous concentrer sur l’essentiel</li>
+                        <li class="liste-item">Vous rebooster grâce à une méthode simple et efficace </li>
+                        <li class="liste-item">Vous renforcer, retrouver confiance en vous et vous affirmer </li>
+                        <li class="liste-item">Gagner en efficacité et atteindre vos objectifs</li>
+        
+                    </ul>
+                </div>
+            </div>
+            <div class="row mx-auto text-center">
+                    <div class="col-md"><h2 class="zone-titre text-center pt-4 pb-2">Témoignages</h2></div>
+                </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                        <blockquote class="blockquote">
+                    <p  class="citations">« L’exercice effectué m’a mis face à des vérités que je ne voulais pas affronter. » 
+                            </p>
+                            <footer class="blockquote-footer quote">Nico</footer>
+                        </blockquote>
+                </div>
+                <div class="col-md-3">
+                        <blockquote class="blockquote">
+                    <p class="citations">
+                        « En toute confiance, j'ai pu appliquer les conseils qu'elles m'ont prodigué. J'ai pu ressentir un soulagement et un grand sentiment d'apaisement une fois le travail accompli. »
+                                </p>
+                                <footer class="blockquote-footer quote">Isabelle</footer>
+                            </blockquote>
+                    </div>
+                    <div class="col-md-3">
+                            <blockquote class="blockquote text-center">
+                            <p  class="citations">
+                                « J’ai pris conscience des freins que je me mettais, bien que connu, je les avais refoulés mais une fois écrits, ça devenait réel. Je garde cette liste sur moi pour me permettre d’avoir un électrochoc me poussant à être dans l’action. Je ne peux que le recommander. »
+                                    </p>
+                                    <footer class="blockquote-footer quote">Karim</footer>
+                                </blockquote>
+                        </div>
+                        
+                        
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <blockquote class="blockquote text-center">
+                    <p  class="citations">
+                        « Merci à ces 2 femmes qui se complètent à merveille et qui savent nous pousser au-delà de nos limites. » 
+                            </p>
+                            <footer class="blockquote-footer quote">Cécile</footer>
+                        </blockquote>
+                </div>
+            </div>
+            <div class="row justify-content-center pb-5 pt-5">
+                    <div class="col-md-5">
+                <h4 class="pt-3 zone-titre text-center" style="font-size: 2rem">J’en ai assez : </h4>
+                <ul class="text-left liste">
+                    <li class="liste-item">D’être sous pression et de ne plus réussir à réfléchir  </li>
+                    <li class="liste-item">De ne plus trouver le sens de mes actions au quotidien</li>
+                    <li class="liste-item">De laisser le jugement des autres m’impacter </li>
+                    <li class="liste-item">De ne pas être considéré(e) à ma juste valeur  </li>
+                    <li class="liste-item">De ne pas savoir m’affirmer au travail et communiquer mes idées</li>
+                    <li class="liste-item">De tout gérer en même temps, de ne pas trouver une organisation efficace</li>
+    
+                </ul>
+                    </div>
+                    </div>
+                    <div class="row mx-auto text-center pb-5">
+                            <div class="col-md">
+                                <button type="button" class="btn btn-ebook " data-toggle="modal" data-target="#exampleModalCenter">
+                                        Oui, je veux obtenir mon kit de survie
+                                      </button>
+                            </div>
+                            
+                        </div>
+                        
+                </div>
+
+        
+                 
+
+
+ </div>
+ <% include ../../../partials/footer.ejs %>
+ <script>
+        $("#navFormations").addClass("active")
+        </script>
+<script>
+videojs("my-video", {}, function(){
+    })</script>
+  </body>
+  </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/settings.css">
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+     <div class="wrapper">
+       <div class="row">
+     <%include ../../partials/navSettings.ejs%>
+        
+     <div class="col-9 float-left">
+    
+
+            <div class="subhead">
+              <h2 class="subhead-heading">Modifier le mot de passe</h2>
+            </div>
+        
+            <!-- Change Password -->
+            <form class="edit_user" id="change_password" action="/parametres/compte" accept-charset="UTF-8" method="post">
+              <dl class="form-group password-confirmation-form">
+                <dt><label for="user_old_password">Ancien mot de passe</label></dt>
+                <dd><input type="password" name="oldPassword" id="user_old_password" required="required" class="form-control form-control"></dd>
+              </dl>
+              <dl class="form-group password-confirmation-form">
+                <dt><label for="user_new_password">Nouveau mot de passe</label></dt>
+                <dd>
+                  <input type="password" name="newPassword" id="user_new_password" required="required"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}" title="Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et de 8 à 30 caractères"  class="form-control form-control" >
+                </dd>
+              </dl>
+              <dl class="form-group password-confirmation-form">
+                <dt><label for="user_confirm_new_password">Confirmer le mot de passe</label></dt>
+                <dd><input type="password" name="newPasswordConfirm" id="user_confirm_new_password" required="required" class="form-control form-control" oninput="check(this)"  ></dd>
+              </dl>
+              <p>
+                <button class="btn mr-2 bouton-settings" type="submit">Mettre à jour</button>
+                <span><a href="/oubli">Mot de passe oublié</a></span>
+              </p>
+        </form>      
+        
+        <div class="subhead  subhead--spacious ">
+          <div class="subhead-heading">Authentification à deux étapes</div>
+          
+
+        </div>
+        <div>Etat: <%if(user.totpStatus == true){%> <span class="text-success float-right">Activé</span> <%}else{%> <span class="text-danger float-right">Désactivé</span> <%}%></div>
+        <a href="/parametres/auth/configure"><button class="btn mr-2 bouton-settings mb-2">Configurer</button></a>
+
+
+          </div>
+         
+      </div>
+      <div class="row">
+        <div class="col-9 float-right">
+          
+        </div>
+      </div>
+     </div>
+  
+
+ <div class="bottom"><% include ../../partials/footer.ejs %></div>
+ <script>
+        function check(input) {
+            if (input.value != document.getElementById('user_new_password').value) {
+                input.setCustomValidity('Les mots de passe doivent correspondre');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+        }
+    </script>
+ <script src="/js/parametres.js"></script>
+ <script>
+   $('#navCompte').addClass("selected")
+ </script>
+ </body>
+ </html>

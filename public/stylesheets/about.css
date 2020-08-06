@@ -1,0 +1,102 @@
+body{
+  background: #fdf1e5 !important;
+}
+
+
+#zone-about{
+  
+    color: rgb(56, 56, 56);
+    font-size: 1.3rem;
+    /* background: #7BCDC8; */
+    /* background: #e6d6c7; */
+    background: #fdf1e5;
+    padding-top: 10% !important;
+    padding-bottom: 5% !important;
+    border-bottom: 1px solid rgba(0,0,0,.0785)!important;
+
+}
+#zone-image{
+    color: rgb(56, 56, 56);
+    /* background: rgb(56, 71, 80); */
+    background: #FFFDF4;
+    /* padding-top: 15% !important; */
+    padding-bottom: 5% !important;
+    border-bottom: 1px solid rgba(0,0,0,.0785)!important;
+  }
+  
+  .texte-mission{
+    text-align: justify;
+    font-family: "Quicksand";
+    color: rgb(24, 24, 24);
+    font-size: 1.3rem;
+  }
+
+  .bio-list-item{
+    text-align: left;
+    /* color: #212529!important; */
+    font-size: 1.2rem;
+letter-spacing: 0.02rem;
+/* line-height: 18px; */
+padding-bottom: 4%;
+}
+.bio-list-item::first-letter{
+    color: #0E5E45!important;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.zone-titre{
+  font-family: 'OldStandard-Bold' !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 4rem;
+}
+
+/* .photo{
+  margin-top: 5%;
+  padding-bottom: 2%;
+  width: 20%;
+} */
+
+#christelAbout{
+ margin-bottom: 10% !important;
+}
+
+#marineAbout{
+  margin-bottom: 10% !important;
+}
+
+.img-bio{
+  width: 6rem;
+  transition:  .3s;
+  filter: contrast(80%)
+}
+.img-bio:hover{
+  cursor: pointer;
+}
+
+.img-clicked{
+  width: 7rem;
+}
+.img-unclicked{
+  width: 5rem;
+  /* filter: contrast(50%); */
+  filter: blur(0.8px);
+}
+  @media (max-width: 760px) {
+    .photo{
+      margin-top: 5%;
+      padding-bottom: 2%;
+      width: 50%;
+    }
+    .showcase-text {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .zone-titre{
+      font-size: 3rem;
+   }
+    #zone-about{
+      padding-top: 10vh !important;
+    }
+  }

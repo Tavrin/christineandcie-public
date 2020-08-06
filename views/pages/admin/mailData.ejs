@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <style>
+  body {
+    background: #F0F1F3; 
+  }
+  </style>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/admin/nav.css">
+</head>
+ <body cz-shortcut-listen="true">
+
+        <% include ../../partials/navAdmin.ejs %> 
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Nouveau contact :</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="NouveauContact">
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Nom :</label>
+                      <input type="text" class="form-control" id="contactName">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Email :</label>
+                      <input type="email" class="form-control" id="contactEmail">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="boutonNouveauContact"> Enregistrer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel2">Confirmation de Suppression</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Voulez vous vraiment supprimer ce contact ?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" id="modalNon" data-dismiss="modal">Non</button>
+                  <button type="button" class="btn btn-danger" id="modalOui" data-dismiss="modal">Oui</button>
+                </div>
+              </div>
+            </div>
+          </div>
+<div class="container-fluid">
+                <div class="row ">
+              <h1 class=" mr-auto mt-5 pl-5 mb-5 titre-categorie">Contacts marketing</h1>
+              <button class="btn btn-lg  btn-admin-action ml-auto mb-5 mt-5 mr-5"   data-toggle="modal" data-target="#exampleModal"> Ajouter un contact</button>
+              </div>
+              <div class="row">
+              <table class="mx-auto  table table-responsive-sm table-light">
+                <thead class="thead-dark custom-table-1">  
+                  <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">e-mail</th>
+                    <th scope="col">date d'inscription</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="posts">
+                    <% contacts.forEach(function(contact){%>
+                        <tr class="ligne" data-id="<%= contact._id%>">
+                            <td style="text-transform: capitalize"><%= contact.name%></td>
+                            <td><%= contact.email%></td>
+                            <td><%=moment(contact.date).format("LLL")%></td>
+                            <td align="right"> </a> <a data-toggle="modal" data-target="#exampleModal2" class="btn btn-danger" href="#"> Supprimer </a></td>
+                            </tr>
+                    <%})%>
+                </tbody>
+                  </table>
+                       
+                      
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    
+    
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation de Suppression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voulez vous vraiment supprimer ce Post ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modalNon" data-dismiss="modal">Non</button>
+        <button type="button" class="btn btn-danger" id="modalOui" data-dismiss="modal">Oui</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+  
+ 
+<!-- </div> -->
+
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="/vendor/jquery-ui/external/jquery/jquery.js"></script>
+<script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src="/js/main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M" crossorigin="anonymous"></script>
+<script>
+feather.replace()
+</script>
+<script src="/js/admin/contacts.js"></script>
+<!-- <script src="/js/dashboard.js"></script> -->
+<script>$(document).ready(function () {
+$("#navAdminHome").addClass("select");
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
+});</script>
+    </body>
+</html>

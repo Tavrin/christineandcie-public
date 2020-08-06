@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../../partials/header.ejs %>
+  <style>
+      body{
+          padding-top: 0 !important;
+      }
+  pre.ql-syntax {
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+}
+  </style>
+  <link rel="stylesheet" href="/stylesheets/blogIndex.css">
+  <link rel="stylesheet" href="/stylesheets/formations.css">
+</head>
+
+<body>
+
+  <% include ../../../partials/nav.ejs %>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Il vous suffit de rentrer les informations ci-dessous afin d'obtenir ce pack de qualité gratuit.</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <form method="POST" action="/contactSave">
+                        <div class="form-group form-row text-left">
+                                <div class="col-lg-12 col-sm-10 mx-auto">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control form-control-lg" name="nom" id="nom" placeholder="Nom" required>
+                                </div>
+                              </div>
+                        <div class="form-group form-row text-left">
+                                <div class="col-lg-12 col-sm-10 mx-auto">
+                          <label for="email">Adresse e-mail</label>
+                          <input type="email" class="form-control form-control-lg" name="email" id="email" aria-describedby="emailHelp" placeholder="Adresse e-mail" required>
+                          <small class="form-text text-muted">En indiquant votre adresse mail, vous acceptez de recevoir des offres commerciales de notre part. Vous pouvez vous désinscrire à tout moment en nous adressant un mail et à travers les liens de désinscription <input type="checkbox" name="consent" required id="consent"></small>
+                          <hr>
+                          <small id="emailHelp" class="form-text text-muted">Vos informations resteront privées et confidentielles</small>
+                                </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-lg-6 col-sm-10 mx-auto">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block bouton-newsletter">S'inscrire</button>
+                    </div>
+                </div>
+                      </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  <div class="container-fluid" id="zone-container" >
+    <div class="row">
+            <!-- <img class="d-block mx-auto img-fluid" id="bunker-image" src="/img/bunker-view2.jpg"> -->
+    </div>
+        <div class="wrapper">
+    <!-- <h1 class="zone-titre  text-center pb-5 pt-5">Découvrez ici notre premier programme</h1> -->
+
+
+    <h1 class="zone-titre titre-formation text-center pt-5 pb-5">Bunker <span style="font-size: 2rem;font-weight: 400; font-family: 'Work Sans', sans-serif;"> <br> Comment aller vers la réussite sans s’épuiser ?</span> </h1>
+              
+        <div class="row mx-auto text-center">
+                
+            <div class="col-md"><h3 class="zone-titre text-center pt-5 pb-5">En suivant ce programme vous réussirez à : </h3>
+                </div>
+           
+        </div>
+        <div class="row justify-content-center pb-5">
+                <div class="col-lg-5">
+                    
+
+                        <ul class="text-left liste">
+                                        <li class="liste-item">Identifier et gérer les personnalités toxiques pour vous </li>
+                                        <li class="liste-item">Atténuer vos tensions grâce à des techniques de massage et de bonnes postures au quotidien</li>
+                                        <li class="liste-item">Défendre vos intérêts en étant assuré(e) de votre légitimité </li>
+                                        <li class="liste-item">Trouver ou retrouver votre motivation, votre moteur pour avancer et persévérer</li>
+                                        <li class="liste-item">Utiliser vos atouts tout restant en accord avec vos principes</li>
+                                        <li class="liste-item">Gérer vos émotions et votre stress pour favoriser votre bien-être</li>
+                                        <li class="liste-item">Communiquer et collaborer efficacement pour atteindre vos objectifs</li>
+                                        <li class="liste-item">Optimiser votre environnement afin de vous y sentir bien et ressourcé(e)</li>
+                                        <li class="liste-item">Organiser votre quotidien pour être en forme et prendre du temps pour vous </li>
+                                        <li class="liste-item">Trouver ou retrouver du sens pour réaliser vos projets </li>
+                        
+                                    </ul>
+                        
+                </div>
+                <div class="col-lg-5">
+                    <video id="my-video"   class='video-js vjs-default-skin vjs-big-play-centered' controls preload='auto' width='512' height='288'>
+                        <source src="/video/tunnel_bunker_opt.mp4">
+                    </video>
+                    <h4 class="pt-3 zone-titre text-center" style="font-size: 2rem">Je suis prêt à : </h4>
+                    <ul class="text-left liste">
+                        <li class="liste-item">Me protéger, me recentrer et agir</li>
+                        <li class="liste-item">Développer mon potentiel</li>
+                        <li class="liste-item">Mettre en place les stratégies me permettant d’atteindre mes objectifs</li>
+                        <li class="liste-item">Me faire passer au premier plan </li>
+                        <li class="liste-item">Persévérer et RÉUSSIR</li>
+        
+                    </ul>
+                </div>
+            </div>
+            <div class="row mx-auto text-center">
+                    <div class="col-md"><h2 class="zone-titre text-center pt-4 pb-2">Témoignages</h2></div>
+                </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                        <blockquote class="blockquote">
+                    <p  class="citations">« Grande fatigue, sommeil en dent de scie, dépressive, cauchemars, dégoût de la vie, en colère, perdue, mal avec moi-même et les autres, le vide dans ma vie…
+                                Je ne savais plus, ni comment je devais agir, ni où j’en étais dans ma vie, mon couple. J’ai fait de l’hypnose, Reiki, Yoga, Psy… je pensais que ça m’aiderait à remonter la pente, mais une seule chose me manquait à tout ça. J’ai rencontré Christine & Cie : mes sauveuses et je suis pleine de reconnaissance. MERCI  …  Je revis, j’ai repris mon métier et mon couple va bien mieux car aujourd’hui je parle et ne me laisse plus faire. Je suis Jocelyne et j’ai 60 ans. Ha ! la belle vie. Il n’y a pas d’âge pour avancer et VIVRE MIEUX. Je peux vous l’assurer. » 
+                            </p>
+                            <footer class="blockquote-footer quote">Jocelyne</footer>
+                        </blockquote>
+                </div>
+                <div class="col-md-3">
+                        <blockquote class="blockquote">
+                    <p class="citations">
+                                « Grâce à la C&C, j’ai pu trouver et comprendre ce qui me faisait vibrer, mes envies pour mon avenir. On m’a aidé à mettre en place un plan d’action et à hiérarchiser en fonction de mes priorités et de mes objectifs personnels et professionnels. » 
+                                </p>
+                                <footer class="blockquote-footer quote">David</footer>
+                            </blockquote>
+                    </div>
+                    <div class="col-md-3">
+                            <blockquote class="blockquote text-center">
+                            <p  class="citations">
+                                        « J’ai réussi à trouver une stabilité, une joie, une motivation dans ma vie privée (en ayant une stabilité familiale, une meilleure communication, des ami(e)s, de nouvelles connaissances qui me comprennent…). J’ai appris à me connaître (comment je fonctionne, avec mes réactions positives et négatives, ce qui me fait vibrer...). » 
+                                    </p>
+                                    <footer class="blockquote-footer quote">Romario</footer>
+                                </blockquote>
+                        </div>
+                        
+                        
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <blockquote class="blockquote text-center">
+                    <p  class="citations">
+                                « Pour être heureuse, je dois commencer par être en accord avec moi-même, prendre confiance en moi et me recentrer sur mes objectifs de vie. Je sais que le chemin est encore long ... mais chaque jour j'y travaille et j'avance ! Un immense merci à vous ! Pour une vie meilleure ! S'épanouir n'a pas de prix ! C'est inestimable ! » 
+                            </p>
+                            <footer class="blockquote-footer quote">Jessica</footer>
+                        </blockquote>
+                </div>
+            </div>
+            <div class="row justify-content-center pb-5 pt-5">
+                    <div class="col-md">
+                <h4 class="pt-3 zone-titre text-center" style="font-size: 2rem">J’en ai assez : </h4>
+                <ul class="text-left liste" style="font-size: 1rem!important">
+                        <div class="row justify-content-center">
+                                <div class="col-md-5">
+                    <li class="liste-item">De me sentir « vampirisé(e) » par les personnalités toxiques </li>
+                    <li class="liste-item">D’avoir des relations difficiles ou insatisfaisantes au travail </li>
+                    <li class="liste-item">D’être tendu(e) et de ne pas réussir à trouver une position agréable pour travailler  </li>
+                    <li class="liste-item">De me laisser marcher sur les pieds sans savoir si je serais dans mon bon droit de réagir</li>
+                    <li class="liste-item">De ne pas savoir à qui m’adresser lorsque j’ai un problème au travail ou en rapport avec le travail (aide pour les démarches et reconnaissance de mes droits)</li>
+                    <li class="liste-item">De me laisser porter par le désir des autres sans me réaliser </li>
+                    <li class="liste-item">De ne plus me sentir réellement investi(e) et en pleine possession de mes moyens </li>
+                    <li class="liste-item">De ne plus être en accord avec ce qui est important pour moi</li>
+                </div><div class="col-md-5">
+                    <li class="liste-item">De ne pas toujours réussir à exprimer mon point de vue</li>
+                    <li class="liste-item">De ne pas toujours réussir à gérer mes émotions au travail et à la maison </li>
+                    <li class="liste-item">De ma routine « métro – boulot – dodo », j’ai besoin de changer mon environnement </li>
+                    <li class="liste-item">De ne pas avoir de temps pour moi ni pour mes proches </li>
+                    <li class="liste-item">De faire l’impasse sur une bonne alimentation et un sommeil réparateur </li>
+                    <li class="liste-item">De ne pas réussir à optimiser mon temps pour atteindre mes objectifs (perso. et pro.)</li>
+                    <li class="liste-item">De pas savoir par où commencer pour concrétiser mes projets</li>
+                    <li class="liste-item">De perdre de vue mes objectifs de vie </li>
+                </div>
+        </div>
+                </ul>
+                    </div>
+                    </div>
+                    <div class="row mx-auto text-center pb-5">
+                            <div class="col-md">
+                                <button type="button" class="btn btn-ebook " data-toggle="modal" data-target="#exampleModalCenter">
+                                                Oui, je veux entrer dans le Bunker ! 
+                                      </button>
+                            </div>
+                            
+                        </div>
+                        
+                </div>
+
+        
+                 
+
+
+ </div>
+ <% include ../../../partials/footer.ejs %>
+ <script>
+        $("#navFormations").addClass("active")
+        </script>
+<script>
+videojs("my-video", {}, function(){
+    })</script>
+  </body>
+  </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <% include ../partials/header.ejs %>
+    <style>
+    body{
+      background: azure !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    </style>
+  </head>
+  <body>
+  
+    <% include ../partials/nav.ejs %>
+<!-- <form action="/register" method="POST" class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal text-center">Nouvel Utilisateur</h1>
+  <label for="username" class="sr-only">Utilisateur</label> 
+    <input type="text" class="form-control mb-2" required autofocus name="username" placeholder="Nom">
+    <label for="email" class="sr-only">E-mail</label> 
+    <input type="email" class="form-control mb-2" required  name="email" placeholder="Addresse e-mail">
+    <label for="password" class="sr-only">Mot de passe</label>
+    <input type="password"  class="form-control mb-3" required  name="password" placeholder="Mot de Passe">
+    <button class="btn btn-lg btn-primary btn-block">Inscription</button>
+</form> -->
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/welcome.css">
+</head>
+<body>
+    <div class="bg d-flex flex-column align-items-center justify-content-center">
+        <% if(success && success.length > 0){ %>
+          <div class="login-container">
+            <!-- <h1 class="display-1 text-center bunker-title login-title">Christine & Cie</h1> -->
+            <h1 class=" mb-2 mt-5 text-center login-subtitle"></h1>
+            
+              
+         
+            <p class="lead">Votre compte a bien été activé, vous pouvez maintenant vous connecter.</p>
+            <!-- <p class="lead mb-5">Si vous n'avez rien reçu vous pouvez le renvoyer en cliquant ci-dessous</p> -->
+            <form action="/login" method="POST" class="form-signin login">
+
+              
+              <div class="form-group">
+              <label for="loginName" class="login-label">Utilisateur</label> 
+                  <input type="text" class="form-control login-input" required id="loginName" autofocus name="username" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="loginPassword" class="login-label">Mot de passe</label>
+                  <input type="password" class="form-control mb-3 login-input" required id="loginPassword" name="password" placeholder="">
+                </div>
+                  <button class="btn btn-lg btn-primary mb-3 login-input login-submit">Connexion</button>
+                  <a href="/oubli" class="oubli">Mot de Passe oublié</a>
+              </form>
+            </div>
+            <% } %>
+          </div>
+      <% include ../partials/footer.ejs %>
+    </body>
+
+</html>

@@ -1,0 +1,132 @@
+<%include ../functions/truncate.ejs%>
+        <div class="wrapper">
+                <!-- Sidebar  -->
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <h3 style="font-family: 'Quicksand'; text-align: center; font-size: 1.5rem"><%=formation.name%></h3>
+                        <!-- <strong>C&C</strong> -->
+                    </div>
+        
+                    <ul class="list-unstyled components">
+                            <li>
+                                    <a href="/formations/mes-formations/<%=formation._id%>" id="navAdminHome">
+                                        <i class="fas fa-home"></i>
+                                        <span class="side-title">Tableau de Bord</span>
+                                    </a>
+                                </li>
+                                <li>
+                                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                            <i class="fas fa-copy"></i>
+                                            <span class="side-title">Modules</span>
+                                        </a>
+                                        
+                                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                                                <%if(formation && formation.modules.length > 0){ console.log(formation.modules[0])%>
+                                                    
+                                            <%formation.modules.forEach(function(module){%>
+                                            <li>
+                                                <a  data-link = "/api/formations/<%=formation._id%>/modules/<%=module._id%>" href="#<%=module._id%>" id="<%=module._id%>" class="moduleLink"><% var title = module.name%><%=title.trunc(30,true)%></a>
+                                            </li>
+                                            <%})%>
+                                            <%}else{ console.log("test100")%>
+                                                <li>
+                                                <a>Ce programme ne contient pas encore de modules</a>
+                                            </li>
+                                                <%}%>
+                                        </ul>
+                                       
+                                    </li>
+                                
+                        
+                        <li>
+                            <a href="/formations/mes-formations/<%=formation._id%>/ressources" id="navAdminMessage">
+                                    <i class="far fa-envelope"></i>
+                                <span class="side-title">Ressources</span>
+                            </a>
+                        </li>
+                        <li>
+                                <a href="/formations/mes-formations/<%=formation._id%>/messages" id="navAdminMembres">
+                                    <i class="far fa-envelope"></i>
+                                    <span class="side-title">Messages</span>
+                                </a>
+                            </li>
+                       
+                        
+                            <li>
+                                    <a href="/formations/mes-formations/<%=formation._id%>/news" id="navAdminBlog">
+                                            <i class="fab fa-blogger"></i>
+                                        <span class="side-title">News</span>
+                                    </a>
+                                </li>
+                        <!-- <li>
+                            <a href="#">
+                               <i class="fas fa-paper-plane"></i>
+                                <span class="side-title">Contact</span>
+                            </a>
+                        </li> -->
+                    </ul>
+        
+                    <!-- <ul class="list-unstyled CTAs">
+                        <li>
+                            <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                        </li>
+                        <li>
+                            <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                        </li>
+                    </ul> -->
+                </nav>
+                <div id="content">
+            
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topAdminNav" style="background: #1B1C22!important;">
+                        <div class="container-fluid">
+        
+                            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                                <i class="fas fa-align-left"></i>
+                                <span></span>
+                            </button>
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+        
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+    
+                                        <li>
+                                                <div class="navbar-nav  ml-auto">
+                                                        <% if(currentUser){ %>
+                                                        <span style="color:#ceecc2;font-family: 'Quicksand';font-weight: 600;"><%=currentUser.username%></span>
+                                                        
+                                                        <% }%>
+                                                        <div class="nav-item dropdown">
+                                                        <a class="nav-link admin-nav-link dropdown-toggle dropdown-toggle2 " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <%if(currentUser.avatar){%><img class="profile-picture" style="object-fit:cover" id='profile-picture' src="<%=currentUser.avatar%>"><%} else{%><i class="fas fa-user-circle" id="icone-stock"></i><%}%>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                                    <% if(currentUser && currentUser.isAdmin){ %>
+                                                                    <a class="dropdown-item" href="/admin">Administration</a>
+                                                                    <hr>
+                                                                    <%}%>
+                                                                    <a class="dropdown-item" id="darkModeButton" href="#">Mode Nuit</a>
+                                                                <a class="dropdown-item" href="/formations/mes-formations">Mes Programmes</a>
+                                                                <a class="dropdown-item" href="/utilisateurs/<%=currentUser._id%>">Profil</a>
+                                                                <a class="dropdown-item" href="/parametres">Paramètres</a>
+                                                                <a class="dropdown-item" href="/logout">Déconnexion</a>
+                                                               
+                                                              </div>
+                                                        </div>          
+                                                    </div>  
+                                        </li>       
+        
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>

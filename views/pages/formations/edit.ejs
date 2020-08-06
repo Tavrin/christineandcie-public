@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <style>
+  body {
+    background: #F0F1F3; 
+  }
+  </style>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/admin/nav.css">
+<link rel="stylesheet" href="/stylesheets/admin/formation.css">
+</head>
+ <body cz-shortcut-listen="true">
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirmation de Suppression</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Voulez vous vraiment supprimer ce module ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="modalNon" data-dismiss="modal">Non</button>
+          <button type="button" class="btn btn-danger" id="modalOui" data-dismiss="modal">Oui</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <% include ../../partials/navAdmin.ejs %> 
+      <div class="container-fluid">
+            <div class="row">
+        <span class=" pt-4 mt-4 pl-3 text-muted"> <a href="/admin/formations"> <i class="fas fa-angle-left"></i> Revenir en arrière</a></span>
+        <h2 class="text-center  mx-auto zone-titre"><%=formation.name%></h2>
+        </div> 
+        <div class="row">
+        <div class="col-7 float-left">
+                
+    
+            
+            <div class="subhead">
+              <h2 class="subhead-heading">Modifier les informations</h2>
+            </div>
+        
+            <!-- Change Formation -->
+            <form class="edit_formation" id="change_formation" action="/formations/<%=formation._id%>" enctype="multipart/form-data" accept-charset="UTF-8" method="POST">
+              <dl class="form-group edit-profile-avatar mr-4 float-right">
+                  <dt><label for="upload-profile-picture">Image de présentation</label></dt>
+                  <dd class="avatar-upload-container clearfix">
+                    <img class="avatar rounded-2" id="inputImage" src="<%if(formation.thumbnail){%><%=formation.thumbnail%><%}%>" width="572" height="320" alt="@Tavrin">
+                    <div class="avatar-upload">
+                        <input type="file" id="fu" name="thumbnail" onchange="readURL(this);" accept="image/*" style="width: 0; display: none">
+                        <div>
+                            <input type="button" class="bouton-settings" onclick="document.getElementById('fu').click()" 
+                            value="Choisir une photo" />
+                            </div>
+                
+                      <div class="upload-state loading">
+                        <button type="button" class="btn mt-3 width-full text-center" disabled="">
+                          <img width="16" height="16" alt="" class="v-align-text-bottom" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif"> Uploading...
+                        </button>
+                      </div>
+                
+                      <div class="upload-state text-red file-empty">
+                        This file is empty.
+                      </div>
+                
+                      <div class="upload-state text-red too-big">
+                        Please upload a picture smaller than 1 MB.
+                      </div>
+                
+                      <div class="upload-state text-red bad-file">
+                        We only support PNG, GIF, or JPG pictures.
+                      </div>
+                
+                      <div class="upload-state text-red failed-request">
+                        Something went really wrong and we can’t process that picture.
+                      </div>
+                    </div> <!-- /.avatar-upload -->
+
+
+                  </dd>
+                </dl>
+                <div class="column two-thirds">
+              <dl class="form-group">
+                <dt><label for="formation_name">Titre </label></dt>
+                <dd><input type="text" name="name" id="formation_name" required="required" class="form-control form-control" value="<%=formation.name%>"></dd>
+              </dl>
+              <dl class="form-group">
+                <dt><label for="formation_description">Description </label></dt>
+                <dd>
+                  <input type="text" name="description" id="formation_description" required="required"  pattern=".{8,140}" value="<%=formation.description%>" title="La description peut contenir de 8 à 30 caractères"  class="form-control form-control" >
+                </dd>
+              </dl>
+              <div class="form-group">
+                  <label for="type">Catégorie</label>
+                  <select class="form-control" name="type" id="type" required>
+                      <option value="<%=formation.type%>"><%=formation.type%></option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="sante">Santé</option>
+                    <option value="bien-etre">Bien-être</option>
+                    <option value="travail">Professionnel</option>
+                    <option value="sport">Sport</option>w
+                  </select>
+                </div>
+              <p>
+                <button class="btn mr-2 bouton-settings" type="submit">Mettre à jour</button>
+              </p>
+            </div>
+        </form>      
+        
+        
+          </div>
+          </div>
+      
+          <div class="row">
+              <a class="btn btn-lg  btn-admin-action mr-auto mb-3 mt-5 ml-5" href="/admin/formations/<%=formation._id%>/modules/new"> Nouveau Module</a>
+              <div id="spinner"></div>
+            <table class="mx-auto table-hover table-striped table table-responsive-sm">
+              <thead class="thead-dark custom-table-1">  
+                <tr>
+                  <th scope="col">Module</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody class="posts">
+              </tbody>
+                </table>
+                     <button class="btn btn-primary ml-4" style="background-color: #396CA0; border: none" id="toggle">Editer l'ordre</button>
+                    
+                  
+              </div>
+            </div>
+        </div>
+    
+      </div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation de Suppression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voulez vous vraiment supprimer ce Post ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modalNon" data-dismiss="modal">Non</button>
+        <button type="button" class="btn btn-danger" id="modalOui" data-dismiss="modal">Oui</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+  
+ 
+<!-- </div> -->
+
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="/vendor/jquery-ui/external/jquery/jquery.js"></script>
+<script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src="/js/main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M" crossorigin="anonymous"></script>
+<script>
+feather.replace()
+let formationId = "<%=formation._id%>"
+</script>
+<script src="/js/admin/modules.js"></script>
+<!-- <script src="/js/dashboard.js"></script> -->
+<script>$(document).ready(function () {
+$("#navAdminFormations").addClass("select");
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
+});</script>
+<script>
+     function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#inputImage')
+                    .attr('src', e.target.result)
+                    .width(572)
+                    .height(320);
+            // let image = reader.readAsDataURL($('#avatar').files[0]);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+    </body>
+</html>

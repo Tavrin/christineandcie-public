@@ -1,0 +1,24 @@
+html, body{
+    height: 100% !important;
+}
+
+.bg{
+    background-image: url("../img/peter-feghali-445901-unsplash-2.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.text-404{
+    color: #e9f2ff;
+    text-align: center;
+}
+.btn-404{
+    color: #e9f2ff;
+    background-color: #1c2a38;
+     border:none;
+     font-size: 1.5rem;
+}
+.btn-404:hover{
+    background-color: #33475c;
+}

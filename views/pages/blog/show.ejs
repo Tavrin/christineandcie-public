@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+        <title>Blog de Christine and Cie - <%=blogpost.title%></title>
+  <% include ../../partials/header.ejs %>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/quill-editor.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/blog.css" />
+
+  <link rel="canonical" href="https://christineandcie.fr/blog/view/<%=blogpost._id%>">
+
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+<div class="container-fluid" style="background:#FFFFFF;">
+<div class="row">
+        <div class=" mx-auto col-sm-6 col-md-5 pt-5">
+    <h1 class="post-headline text-center mt-5"><%=blogpost.title%> </h1>
+    </div>
+    </div>
+    <div class="post-info text-center">
+        <span class="text-center post-time"><%=moment(blogpost.date).format('DD MMMM, YYYY')%></span> <span><% if(blogpost.author && blogpost.author[0]!=undefined){%><%=blogpost.author[0].username%><%}else{%>Christine and Cie<%}%></span>
+    </div>
+    <div class="row post-thumbnail text-center">
+        <div class="mx-auto col-md-6 pb-5 col-sm-8">
+            <img src="<%-blogpost.thumbnail%>" class="img-fluid">
+        </div>
+    </div>
+    <div class="row">
+        <div class=" mx-auto col-sm-6 col-md-5  post-content  pb-5 mb-5">
+            <%-blogpost.content%>
+            <hr>
+            <span class="tagTitle">Mots-clés :</span>
+            <%blogpost.tags.forEach(function(tag){%>
+                <a href="/blog/tag/<%=tag%>/1" class="tag"><%=tag%></a>
+            <%})%>
+        </div>
+    </div>
+</div>
+<% include ../../partials/footer.ejs %>
+<script>
+$("#navBlog").addClass("active")
+
+</script>
+  </body>
+  </html>

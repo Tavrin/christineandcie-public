@@ -1,0 +1,214 @@
+body{
+  background:#F6F6F6 !important;
+}
+
+@font-face {
+    font-family: 'futuratmedregular';
+    src: url('/fonts/futura_urw_medium-webfont.woff2') format('woff2'),
+         url('/fonts/futura_urw_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+a{
+  color: #5a6175;
+}
+
+a:hover{
+  color: #25c7d2;
+}
+.carousel {
+    /* any dimensions are fine, it can be responsive with max-width */
+    width: 80%;
+    height: 60vh;
+  }
+  
+  .carousel-caption{
+    width: 50%;
+  }
+@media(max-width:1200px){
+    .carousel {
+        /* any dimensions are fine, it can be responsive with max-width */
+        width: 100%;
+        height: 40vh;
+      }
+      
+}
+@media(max-width:760px){
+    .carousel {
+        /* any dimensions are fine, it can be responsive with max-width */
+        /* width: 300px; */
+        height: 30vh;
+      }
+      
+}
+
+.carousel-titre{
+    font-family: 'OldStandard-Bold' !important;
+    color: white;
+    font-size: 50px !important;
+    line-height: 56px !important;
+    letter-spacing: -.3px !important;
+}
+  .carousel-inner {
+    /* make sure your .items will get correct height */
+    height: 100%;
+  }
+  
+  .carousel-item {
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel-item img {
+    visibility: hidden;
+  }
+  .blog-post{
+    border-bottom: 1px solid rgba(0,0,0,.0785)!important;
+  }
+  .article-card{
+    border-radius: 1%;
+    height: 430px;
+    display: flex;
+    align-items: center;
+    
+    flex: 0 1 100%;
+    /* margin: 0 auto; */
+    margin-bottom: 30px !important;
+    background-color: #fff;
+    margin:0 10%;
+  }
+  .article-card-image{
+    border-top-left-radius: 1%;
+    border-bottom-left-radius: 1%;
+    flex-basis: 50%;
+    position: relative;
+    vertical-align: baseline;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+        /* display: block; */
+  }
+
+  .article-card-image img{
+    min-height: 100% !important
+  }
+
+  .blog-title a{
+    font-family: 'OldStandard-Bold' !important;
+    text-transform: capitalize;
+    /* font-weight: 600; */
+    /* color: rgb(56, 56, 56); */
+    color: #164937 !important;
+    font-size: 34px;
+    line-height: 40px;
+  }
+  
+.article-card-infos{
+  
+    height: auto;
+    flex-basis: 50%;
+    position: relative;
+    background: #fff;
+    text-align: center;
+    padding: 0 40px;
+}
+  .flex-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    padding: 0 95px;
+    margin: 50px auto;
+    max-width: 1440px;
+    flex: 0 1 100%;
+  }
+
+  @media(max-width:1024px){
+    .article-card{
+      -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    margin:0 0;
+    margin-bottom: 15px;
+    flex-direction: column;
+    }
+    .flex-wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      -webkit-box-pack: justify;
+      padding: 0;
+      margin: 50px auto;
+      max-width: 1440px;
+      flex: 0 1 100%;
+    }
+  
+  }
+
+  .blog-description{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: 'futuratmedregular',Arial,sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: normal;
+    color: #383838;
+  }
+  .header__bottom-inner ul{
+    padding: 0;
+    overflow-x: auto;
+    border-top: none;
+    text-align: center;
+    width: auto;
+
+}
+.header__bottom-inner li {
+    display: inline-block;
+    padding-right: 48px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.2083333333em;
+    line-height: 1.3333333333;
+}
+
+
+
+.header__bottom {
+  padding-top: 48px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(178, 178, 178, 0.25);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(178, 178, 178, 0.25);
+}
+
+.blog-category::after{
+  display: inline-block;
+    /* vertical-align: middle; */
+    margin-left: 8px;
+    content: '.';
+    /* background: #CFD7E6; */
+    font-size: 25px;
+}
+
+.blog-category a{
+  color: #33c0f6;
+}
+.blogpost-author{
+  margin-left: 7px;
+}
+
+@media (min-width: 762px) {
+
+  #blog-container{
+    padding-top: 5%;
+  }
+  
+}

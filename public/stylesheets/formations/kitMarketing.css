@@ -1,0 +1,185 @@
+body{
+    background-image: url("../../img/denys-nevozhai-191635-unsplash.jpg") !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    min-width: 100% !important;
+    min-height: 100vh !important;
+     width: 100% !important;  
+     background-position: 50% 50% !important;
+  
+  }
+  
+  #zone-container{
+    background:rgba(41, 41, 41, 0.74);
+  }
+  #zone-principale{
+      color: rgb(56, 56, 56);
+      /* background: #7BCDC8; */
+      background: #e9eef3;
+      padding-top: 10% !important;
+      padding-bottom: 5% !important;
+      border-bottom: 1px solid rgba(0,0,0,.0785)!important;
+  }
+  #zone-bunker{
+      color: white;
+      /* background: rgb(56, 71, 80); */
+      background: #53965e;
+      padding-top: 10% !important;
+      padding-bottom: 10% !important;
+      border-bottom: 1px solid rgba(0,0,0,.0785)!important;
+    }
+    
+    #zone-a-venir{
+      color: rgb(56, 56, 56);
+      /* background: #7BCDC8; */
+      background: rgb(249, 253, 255);
+      padding-top: 10% !important;
+      padding-bottom: 10% !important;
+    }
+  .wrapper{
+    max-width: 70%;
+    margin: 0 auto;
+    color: rgb(245, 245, 245) !important;
+    font-family: 'OldStandard-Regular'
+  }
+    .bouton-newsletter{
+      background: #3B5998;
+      border-color: #595D66;
+    }
+  
+    .bouton-newsletter:hover, .bouton-newsletter:not(:disabled):not(.disabled):active{
+      background: rgb(146, 159, 189);
+      border-color: rgb(146, 159, 189);
+    }
+    .bouton-bunker{
+      background-color: rgba(0, 0, 0, 0);
+      border-radius: 30px 30px 30px 30px;
+      border: white solid 2px;
+    }
+  
+    .bouton-bunker:hover{
+      background: white;
+      color: #7BCDC8;
+      border: white solid 2px;
+    }
+  
+    .zone-titre {
+      font-family: 'OldStandard-Bold' !important;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 3rem;
+  }
+  
+  .citations{
+    font-size: 1rem;
+    /* color: rgb(25, 25, 26); */
+  }
+  
+  
+  
+  .btn-ebook{
+    text-transform: uppercase;
+    background: #3B5998;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    border: 0px solid;
+    border-color: #000000;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 0px #000000;
+    -moz-box-shadow: 0px 0px 0px #000000;
+    padding-top: 16px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: 0.1s;
+  }
+  
+  .btn-ebook:hover, .btn-ebook:active{
+    background: #2A9ABF;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    border-color: #ccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0px 0px 10px #33476b;
+    padding-top: 16px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  #bunker-image{
+    min-width: 100vw; 
+    object-fit:cover
+  }
+
+  .quote{
+      color: #c2c2c2;
+  }
+
+  .liste{
+    /* font-family: 'Lato', sans-serif; */
+    font-size: 1.16rem !important;
+    font-weight: 400;
+    padding: 30px 40px;
+    /* font-size: 1.8rem; */
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .liste-item{
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+  }
+  .titre-formation{
+    font-size: 4rem;
+  }
+
+  .sous-titre-formation{
+    font-size: 4rem;
+  }
+  
+  
+  @media (min-width: 762px) {
+  
+    .wrapper{
+      padding-top: 10%;
+    }
+    
+  }
+  @media (max-width: 760px) {
+    .photo{
+      margin-top: 5%;
+      padding-bottom: 2%;
+      width: 50%;
+    }
+    .showcase-text {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .zone-titre{
+      font-size: 2.3rem;
+   }
+   #bunker-image{
+  
+   }
+    .btn-ebook{
+      max-width: 100%;
+      font-size: 16px;
+      white-space: normal;
+    }
+  
+    .citations{
+      font-size: 1.1rem;
+    }
+  
+    .wrapper{
+      max-width: 90%;
+      font-size: 1.2rem;
+    }
+    
+  }

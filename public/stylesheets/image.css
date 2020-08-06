@@ -1,0 +1,21 @@
+#imagemap span {
+    display:none;
+}
+#imagemap:hover span {
+    display:block;
+    position:fixed;
+    overflow:hidden;
+}
+
+.bio-list-item{
+    /* color: #212529!important; */
+    font-size: 1.2rem;
+letter-spacing: 0.02rem;
+/* line-height: 18px; */
+padding-bottom: 4%;
+}
+.bio-list-item::first-letter{
+    color: #0E5E45!important;
+    font-size: 1.3rem;
+    font-weight: 600;
+}

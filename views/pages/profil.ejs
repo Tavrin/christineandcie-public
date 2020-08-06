@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+     <div class="wrapper" style="height:100vh;">
+       <div class="row">
+        
+        <div class="col-3 float-left pr-3" style="border-right: 1px solid #dbdbdb!important; height: 100vh;">
+                <img alt="" width="230" height="230" class="avatar width-full rounded-2" src="<%if(user.avatar){%><%=user.avatar%><%}else{%>/upload/img-profil/placeholder.png<%}%>">
+<div class="py-3">
+                <span class="p-name vcard-fullname d-block"><%=user.username%></span>
+            <!-- <h1 class=" vcard-fullname py-3"><%=user.username%></h1> -->
+            <span class="p-nickname vcard-username d-block" id="userLevel"><%=user.level%></span>
+        </div>
+          <div class="d-inline-block mb-3 user-profile-bio">
+                <div><%if(user.bio){%><%=user.bio%><%}%></div>
+              </div>
+              <div class="under-info">
+                    <%if(user.url){%><a href="<%=user.url%>"><%=user.url%></a><%}%>
+                    <div><%if(user.location){%><%=user.location%><%}%></div>
+              </div>
+        </div>
+        <div class="col-9 float-left pl-2">
+            <h2 class="text-center pt-3">Mes Badges</h2>
+        </div>
+      </div>
+     </div>
+  
+
+ <div class="bottom"><% include ../partials/footer.ejs %></div>
+ <script src="/js/profil.js"></script>
+ <script>
+   $('#navProfil').addClass("selected")
+ </script>
+ </body>
+ </html>

@@ -1,0 +1,207 @@
+
+.zone-titre{
+    font-family: 'OldStandard-Bold' !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 4rem;
+  }
+
+  .hover{
+    opacity: 0.7 !important;
+    position: absolute !important;
+    background: rgb(36, 36, 36) !important;
+  }
+@media(max-width:760px){
+  
+
+    .zone-titre{
+        font-size: 3rem;
+    }
+}
+
+
+
+
+
+
+
+
+  .about-hover{
+    opacity: 0.7 !important;
+    position: absolute !important;
+    background: rgb(36, 36, 36) !important;
+  }
+
+.zone-about-contenu{
+    color: white !important;
+  }
+  .filtre-zone-about, .filtre-zone-about-2{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    position: absolute;
+    background: rgb(45, 47, 61);
+    transition: 0.3s;
+  }
+  
+  
+  .filtre-zone-about:hover, .filtre-zone-about-2:hover  {
+  
+    opacity: 0.7;
+    position: absolute;
+    background: rgb(36, 36, 36);
+  }
+  
+
+  .colonne-bande-2-gauche{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .hover-bouton-about{
+    opacity: 0.8  !important;
+    background: rgb(19, 17, 17)!important;
+  }
+
+  #zone-about{
+    position: relative;
+    background-image: url("../../img/achieve-1822503_1920.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  min-height: 100%;
+
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+  }
+
+  #zone-about-2{
+    position: relative;
+    background-image: url("../../img/1_H1R1InRjRuNTsmw4NZDxdw.jpg");;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    min-height: 100%;
+
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
+  }
+
+  .btn-ebook{
+    text-transform: uppercase;
+    background: #3B5998;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    border: 0px solid;
+    border-color: #000000;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 0px #000000;
+    -moz-box-shadow: 0px 0px 0px #000000;
+    padding-top: 16px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: 0.1s;
+  }
+
+  .btn-ebook:hover, .btn-ebook:active{
+    background: #2A9ABF;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    border-color: #ccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0px 0px 10px #33476b;
+    padding-top: 16px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  
+  .zone-about-titre{
+    color: rgb(40, 50, 56);
+  }
+  .zone-about-texte{
+    color: rgb(40, 50, 56);
+    font-size: 1.56rem !important;
+  }
+
+  .zone-about-texte-2{
+    font-weight: 500;
+    font-size: 1.36rem !important;
+    line-height: 2;
+  }
+  @media(max-width:760px){
+    .btn-ebook{
+      max-width: 100%;
+      font-size: 16px;
+      white-space: normal;
+    }
+    #zone-about{
+      /* margin-top: 2% !important; */
+      /* margin-bottom: 3% !important; */
+    }
+
+    .colonne-bande-2-gauche{
+      padding-right: 0;
+      padding-bottom: 1%;
+    }
+  }
+
+/* ################## Fin zone a propos ################## */
+
+
+/* ################## Zone avenir ################## */
+#zone-avenir{
+    /* background: rgb(56, 71, 80); */
+    /* color: #202020;
+    padding-top: 15% !important;
+    padding-bottom: 15% !important; */
+    position: relative;
+    color: rgb(255, 255, 255);
+    background-image: url("/img/pexels-photo-296282.jpg");
+    background-position: center center;
+    background-size: cover;
+    /* background: #7BCDC8; */
+    /* background: #e6d6c7; */
+    padding-top: 10% !important;
+    padding-bottom: 5% !important;
+    border-bottom: 1px solid rgba(0,0,0,.0785)!important;
+  }
+
+
+  .filtre-zone-avenir {
+  
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    position: absolute;
+    background: rgb(45, 47, 61);
+    transition: 0.3s;
+  }
+
+  .filtre-zone-avenir:hover {
+    opacity: 0.7;
+    position: absolute;
+    background: rgb(36, 36, 36);
+  }
+
+  .avenir-hover{
+    opacity: 0.7 !important;
+    position: absolute !important;
+    background: rgb(36, 36, 36) !important;
+  }
+
+  .hover-form-avenir{
+    opacity: 0.8  !important;
+    background: rgb(19, 17, 17)!important;
+  }
+   /* ################## Fin zone avenir ################## */

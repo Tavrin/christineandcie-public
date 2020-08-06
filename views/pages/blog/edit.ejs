@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <% include ../../partials/header.ejs %>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/quill-editor.css" />
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+  <h1 class="text-center m-3 display-4" >Editer l'article</h1>
+<div class="container">
+  <!-- <form action="/blog" method="POST"> -->
+  <form  id="quill-edit">
+      <div class="form-group">
+          <label for="title">Titre :</label>
+  <input class="form-control" name="title" value="<%=blogpost.title%>" required id="title" type="text">
+  </div>
+  <div class="form-group">
+      <label for="thumbnail">Image :</label>
+      <input class="form-control-file pb-2" type="file" name="thumbnail" id="thumbnail"  onchange="readURL(this);" accept="image/*">
+      <img  id="inputImage" src="<%=blogpost.thumbnail%>" alt="" style="min-width: 500px; min-height: 300px;max-width: 500px; max-height: 300px;">
+  <!-- <input class="form-control" type="text" name="thumbnail" id="thumbnail" placeholder="image de présentation"> -->
+</div>
+<div class="form-group">
+    <label for="description">Courte description :</label>
+  <input class="form-control" type="text" name="description" id="description" minlength="10" maxlength="800" required value="<%=blogpost.description%>">
+</div>
+<div class="form-group">
+    <label for="tags">Mots clés :</label>
+    <input class="form-control" type="text" name="tags" id="tags" value="<%=blogpost.tags%>">
+  </div>
+<div class="form-group">
+    <label for="category">Catégorie (veuillez resélectionner le bon) :</label>
+    <select class="form-control" name="category" id="category" required>
+      <option value="lifestyle">Lifestyle</option>
+      <option value="sante">Santé</option>
+      <option value="bien-etre">Bien-être</option>
+      <option value="travail">Travail</option>
+      <option value="sport">Sport</option>
+      <option value="beaute">Beauté</option>
+    </select>
+  </div>
+  <div class="form-group">
+      <label for="category">Auteur original</label>
+      <input type="text" class="form-control" name="author" id="author" placeholder="<% if(blogpost.author && blogpost.author[0]!=undefined){%><%=blogpost.author[0].username%><%}else{%>Christine and Cie<%}%>" readonly>
+    </div>
+<div class="form-group">
+    <input class="form-control" type="hidden" id="content" required name="content">
+  <div id="toolbar-container">
+  <span class="ql-formats">
+  <select class="ql-font"></select>
+  <select class="ql-size">
+  <option value="12px">12</option>
+      <option value="18px"selected>18</option>
+      <option value="24px">24</option>
+      <option value="32px">32</option>
+      <option value="48px">48</option>
+  </select>
+  </span>
+  <span class="ql-formats">
+  <button class="ql-bold"></button>
+  <button class="ql-italic"></button>
+  <button class="ql-underline"></button>
+  <button class="ql-strike"></button>
+  </span>
+  <span class="ql-formats">
+  <select class="ql-color"></select>
+  <select class="ql-background"></select>
+  </span>
+  <span class="ql-formats">
+  <button class="ql-script" value="sub"></button>
+  <button class="ql-script" value="super"></button>
+  </span>
+  <span class="ql-formats">
+  <button class="ql-header" value="1"></button>
+  <button class="ql-header" value="2"></button>
+  <button class="ql-blockquote"></button>
+  <button class="ql-code-block"></button>
+  </span>
+  <span class="ql-formats">
+  <button class="ql-list" value="ordered"></button>
+  <button class="ql-list" value="bullet"></button>
+  <button class="ql-indent" value="-1"></button>
+  <button class="ql-indent" value="+1"></button>
+  </span>
+  <span class="ql-formats">
+  <button class="ql-direction" value="rtl"></button>
+  <select class="ql-align"></select>
+  </span>
+  <span class="ql-formats">
+  <button class="ql-link"></button>
+  <button class="ql-image"></button>
+  <button class="ql-video"></button>
+  <button class="ql-formula"></button>
+  </span>
+  <span class="ql-formats">
+  <button class="ql-clean"></button>
+  </span>
+  </div>
+  <div id="editor-container">
+  <%-blogpost.content%>
+  </div>
+</div>
+<div class="form-group">
+  <a href="/blog/view/<%=blogpost._id%>"><button class="btn btn-primary btn-lg btn-block">Enregistrer</button></a>
+  </div>
+  </form>
+</div>
+<script>
+ let formId = "<%=blogpost._id%>"
+ </script>
+<script src="/vendor/quill/dist/quill.min.js"></script>
+   <% include ../../partials/footer.ejs %>
+   <script src="/js/admin/editArticle.js"></script>
+   <script>
+   var BackgroundStyle = Quill.import('attributors/style/background');
+   var ColorStyle = Quill.import('attributors/style/color');
+   var SizeStyle = Quill.import('attributors/style/size');
+   var AlignStyle = Quill.import('attributors/style/align');
+   var FontStyle = Quill.import('attributors/style/font');
+   SizeStyle.whitelist = ['12px', '18px','24px', '32px', '48px'];
+   Quill.register(BackgroundStyle, true);
+   Quill.register(ColorStyle, true);
+   Quill.register(SizeStyle, true);
+   Quill.register(AlignStyle, true);
+   Quill.register(FontStyle, true);
+   var quill = new Quill('#editor-container', {
+    modules: {
+       toolbar: "#toolbar-container"
+    },
+    theme: 'snow',
+    placeholder: "Nouveau Post"
+  });
+  
+   </script>
+  </body>
+  </html>

@@ -1,0 +1,89 @@
+<%if (locals.title && locals.title != undefined) {%>
+  <title><%= title %></title>
+<%}%>
+
+<meta charset="utf-8">
+<meta name="author" content="Christine and Cie" />
+<%if (locals.headerDescription && locals.headerDescription != undefined) {%>
+  <title><%= headerDescription %></title>
+<%} else {%>
+  <meta name="description" content="Christine and Cie, notre mission est de proposer des formations en lien avec le bien-être et le développement personnel" />
+  <meta property="og:description" content="Christine and Cie, notre mission est de proposer des formations en lien avec le bien-être et le développement personnel" />
+<%}%>
+
+<meta property="og:site_name" content="Christine and Cie" />
+<meta property="og:type" content="website">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119632621-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119632621-2');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/favicon/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Christine and Cie">
+<meta name="application-name" content="Christine and Cie">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+<link rel="stylesheet" href="/vendor/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/nav.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/landing-page.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/nprogress.css" />
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/vendor/cookieconsent/cookieconsent.min.css" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="/vendor/popper.js/dist/umd/popper.min.js"></script>
+<link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M" crossorigin="anonymous"></script> -->
+
+<script src="/vendor/axios/dist/axios.min.js"></script>
+<script src="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/index.js"></script>
+<script type="text/javascript">
+  loadProgressBar()
+</script> 
+
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+
+<!-- <style type="text/css">
+  #nprogress .bar {
+      background: rgb(65, 146, 65) !important;
+      /* height: 3px; */
+  }
+
+  #nprogress .peg {
+      box-shadow: 0 0 10px rgb(65, 146, 65), 0 0 5px rgb(65, 146, 65) !important;
+  }
+
+  #nprogress .spinner-icon {
+      border-top-color: rgb(65, 146, 65) !important;
+      border-left-color: rgb(65, 146, 65) !important;
+  }
+</style>  -->

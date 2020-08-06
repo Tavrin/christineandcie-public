@@ -1,0 +1,64 @@
+
+<% if(currentUser){%> <nav class="navbar   nav-user fixed-top navbar-expand-lg navbar-light bg-light" id="mainNav"> <%}else{%> 
+<nav class="navbar  fixed-top navbar-expand-lg navbar-light bg-light" id="mainNav"><%}%>
+  <a class="navbar-brand d-flex" style="font-family: 'OldStandard-Regular', cursive;" href="/">
+    
+        <img src="/img/brand1.png" width="70%" height="70%" alt="" class="mx-auto" id="brand">
+        <img src="/img/favicon-2.png" width="30" height="30" alt="" class="mx-auto" id="brand2">
+    <span class="pl-3 text-center" id="brand-small" style=" color: #404050"><span style="font-family: 'Dancing Script';"> Christine & Cie </span><br>  <span style="font-size: 1rem;" id="brand-quote">Votre épanouissement, notre mission</span>
+    </span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav  mx-auto">
+      
+      <a class="nav-item nav-link" id="navIndex" href="/">Accueil <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" id="navAbout" href="/a-propos">Qui Sommes Nous</a>
+    
+      <a class="nav-item nav-link" id= "navFormations" href="/formations">Programmes</a>
+      <a class="nav-item nav-link" id="navBlog" href="/blog/1">Blog</a>
+    </div>
+    <% if(currentUser){ %>
+    <div class="navbar-nav  ml-auto">
+      <%=currentUser.username%>
+      <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%if(currentUser.avatar){%><img class="profile-picture" style="object-fit:cover" id='profile-picture' src="<%=currentUser.avatar%>"><%} else{%><i class="fas fa-user-circle" id="icone-stock"></i><%}%>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <% if(currentUser && currentUser.isAdmin){ %>
+                <a class="dropdown-item" href="/admin">Administration</a>
+                <hr>
+                <%}%>
+            <a class="dropdown-item" href="/formations/mes-formations">Mes Programmes</a>
+            <a class="dropdown-item" href="/utilisateurs/<%=currentUser._id%>">Profil</a>
+            <a class="dropdown-item" href="/parametres">Paramètres</a>
+            <a class="dropdown-item" href="/logout">Déconnexion</a>
+           
+          </div>
+      </div>          
+  </div>
+  <% }%>
+</div>
+</nav>
+<div class="container-flash">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%- error %>
+                <button type="button" class="close fade show" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%- success %>
+                <button type="button" class="close fade show" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </div>
+        <% } %>
+    </div>
+
+  

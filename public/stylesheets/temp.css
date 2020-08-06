@@ -1,0 +1,75 @@
+html, body{
+    height: 100% !important;
+    overflow: hidden;
+    padding-top: 0 !important;
+    background: url("../img/ruslan-valeev-598994-unsplash.jpg");
+          background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.login-container{
+  text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    z-index: 103;
+    /* margin-top: 9%; */
+}
+
+.bouton-login{
+    z-index: 101;
+    position: absolute;
+    border: none;
+    transition: all 0.4s;
+    background: #00c7d5;
+    background: -webkit-linear-gradient(45deg, #00c7d5, #367dff);
+    background: -o-linear-gradient(45deg, #00c7d5, #367dff);
+    background: -moz-linear-gradient(45deg, #00c7d5, #367dff);
+    background: linear-gradient(45deg, #00c7d5, #367dff);
+    top: 0;
+  left: -100%;
+
+}
+
+
+.hidden{
+    display: none!important;
+}
+
+
+  .bg{
+    background-color: rgba(0, 0, 0, 0.315);
+          background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+
+
+
+
+.login-title{
+    color: rgb(255, 254, 248);
+        font-family: 'Dancing Script', cursive;
+        font-weight: 700;
+}
+
+@media only screen and (max-width: 720px) {
+    .login-title{
+        font-size: 3.5rem;
+      }
+    /* .login-container{
+        top: 50px !important;
+    } */
+    /* .form-signin{
+        margin-top: 10% !important;
+    } */
+    /* .hidden{
+        display: block!important;
+    } */
+}
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+  <div class="container-fluid">
+  <div class="row landing-zone">
+  <div class="landing-image">
+  <div class="row mt-5 d-flex">
+
+      <!-- <div class="col-auto mx-auto text-center"> -->
+          <div id="logo-back-bas" class="mx-auto text-center"><img src="./img/logo-arriere-plan-bas.png"/></div>
+          <div id="logo-back-haut" class="mx-auto text-center"><img src="./img/logo-arriere-plan-haut.png"/></div>
+          <div id="logo-front" class="mx-auto text-center"><img src="./img/logo-premier-plan.png"/></div>
+            <!-- <div class="mx-auto"><img src="logo-version-finale2.png" class="img-fluid mx-auto" alt="Responsive image"></div> -->
+      </div>
+   
+    <div class="jumbotron mt-5 annonce text-center">
+            <h1 class="display-3 text-center bunker-title">Christine & Cie</h1>
+            <p class="lead bunker-text">La brigade du bien-être à votre service !</p>
+            <!-- <hr class="my-4"> -->
+            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+            <a class="btn btn-primary btn-lg " id="bouton-hero" href="#" role="button">En savoir plus</a>
+          </div>
+  </div>
+  </div>
+</div>
+<section id="zone-icones" class="text-center pt-5">
+<div class="container">
+  
+  <div class="row">
+      <div class="col-lg">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex pb-5 icones-couleur">
+                <!-- <i data-feather="layers" class=" m-auto" id="layers" style="width: 23%; height: 23%;"></i> -->
+              <!-- <i class="icon-layers m-auto couleur-vert"></i> -->
+            </div>
+            <h3 class="services-titre">A propos de nous</h3>
+            <p class="lead zone-icones-texte mb-0  ">Pour aller mieux il est important de ne pas sauter les étapes, nous sommes là pour vous guider à chaque moment.</p>
+
+            <div class="features-icons-icon d-flex pt-5 icones-couleur">
+              <a class="btn btn-primary btn-lg bouton-infos mx-auto" id="bouton-potentiel" href="/a-propos" role="button">En savoir plus</a>
+          </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<section id="zone-premium" class="text-center pt-5">
+    <div class="container">
+      
+      <div class="row">
+          <div class="col-lg-10 m-auto">
+              <h2 class="services-titre">Bunkers</h2>
+              <p class="lead mb-5" style="font-weight: 500;">Besoin d'un moment de détente ? Offrez vous un moment de bien-être offert avec votre pack de formation</p>
+              <a class="btn btn-primary btn-lg bouton-infos" id="bouton-premium" style="padding: 10px 50px;" href="https://christinecie.learnybox.com/bunkers/" role="button" >En savoir plus</a>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="zone-potentiel" class="text-center pt-5">
+        <div class="container">
+          
+          <div class="row">
+              <div class="col-lg-10 mx-auto showcase-text">
+                  <h2 class="services-titre">Packs à venir</h2>
+                  <p class="lead mb-5" style="font-weight: 500;">Ouvrez vous au monde et écoutez vos désirs, nous sommes là pour vous accompagner avec des conseils personnalisés !</p>
+                  <a class="btn btn-primary btn-lg bouton-infos" id="bouton-potentiel" href="https://christinecie.learnybox.com/bunkers/" role="button">En savoir plus</a>
+                </div>
+            </div>
+          </div>
+        </section> -->
+        <section id="zone-pro" class="text-center pt-5">
+            <div class="container">
+              
+              <div class="row">
+                  <div class="col-lg-10 order-lg-1 mx-auto showcase-text">
+                      <h2 class="services-titre">Formations à venir</h2>
+                      <p class="lead" style="font-weight: 500;">Bunker n'est pas notre seule formation, d'autres sont à venir !</p>
+                      <p class="lead mb-5">Pour obtenir plus d'informations sur nos mises-a-jour de contenu et nouvelles formations n'hésitez pas à souscrire ci-dessous ! </p>
+                      <form method="POST" action="/emailSave">
+                        <div class="form-group form-row">
+                                <div class="col-lg-6 col-sm-10 mx-auto">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control form-control-lg" name="nom" id="nom" placeholder="Nom" required>
+                                </div>
+                              </div>
+                        <div class="form-group form-row">
+                                <div class="col-lg-6 col-sm-10 mx-auto">
+                          <label for="email">Addresse e-mail</label>
+                          <input type="email" class="form-control form-control-lg" name="email" id="email" aria-describedby="emailHelp" placeholder="Addresse e-mail" required>
+                          <small id="emailHelp" class="form-text text-muted">Nous ne partagerons ces informations avec personne d'autre</small>
+                                </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-lg-6 col-sm-10 mx-auto">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block bouton-newsletter">S'inscrire</button>
+                    </div>
+                </div>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+
+  <% include ../partials/footer.ejs %>
+<!--  <script>
+  var form = $('#login-form');
+  var overlay = $('#lightboxOverlay')
+  $('#connexion-link').on("click", function(event){
+    overlay.fadeToggle("slow");
+    form.fadeToggle("slow");
+  } )
+  overlay.on("click", function(event){
+    overlay.fadeToggle("slow");
+    form.fadeToggle("slow");
+  } )
+  </script> -->
+  <script>
+  $("#navIndex").addClass("active")
+ </script>
+</body>
+</html>

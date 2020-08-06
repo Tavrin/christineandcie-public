@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <style>
+  body {
+    background: #F0F1F3; 
+  }
+  </style>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/admin/nav.css">
+</head>
+ <body cz-shortcut-listen="true">
+
+        <% include ../../partials/navAdmin.ejs %> 
+<div class="container-fluid">
+                <div class="row ">
+              <h1 class=" mr-auto mt-5 pl-5 mb-5 titre-categorie">changements apportés au site</h1>
+              </div>
+              <div class="row">
+              <table class="mx-auto  table table-responsive-sm table-light">
+                <thead class="thead-dark custom-table-1">  
+                  <tr>
+                    <th scope="col">Auteur</th>
+                    <th scope="col">changement</th>
+                    <th scope="col">date</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="posts">
+                    <% data.forEach(function(commit){%>
+                        <tr class="ligne">
+                            <td style="text-transform: capitalize"><%= commit.commit.author.name%></td>
+                            <td><%= commit.commit.message%></td>
+                            <td><%=moment(commit.commit.author.date).format("LLL")%></td>
+                            <!-- <td align=\"right\"><a class=\"btn btn-primary\" href=\"/blog/view/'+blogpost._id+'\"> Voir </a> <a class=\"btn btn-primary\" href=\"/blog/'+blogpost._id+'/editer\"> Editer </a> <a data-toggle="modal" data-target="#exampleModal" class=\"btn btn-danger\" href=\"#\"> Supprimer </a></td> -->
+                            </tr>
+                    <%})%>
+                </tbody>
+                  </table>
+                       
+                      
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    
+    
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation de Suppression</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voulez vous vraiment supprimer ce Post ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modalNon" data-dismiss="modal">Non</button>
+        <button type="button" class="btn btn-danger" id="modalOui" data-dismiss="modal">Oui</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+  
+ 
+<!-- </div> -->
+
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="/vendor/jquery-ui/external/jquery/jquery.js"></script>
+<script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<script src="/js/main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js" integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M" crossorigin="anonymous"></script>
+<script>
+feather.replace()
+</script>
+<!-- <script src="/js/dashboard.js"></script> -->
+<script>$(document).ready(function () {
+$("#navChangelog").addClass("select");
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+
+});</script>
+    </body>
+</html>

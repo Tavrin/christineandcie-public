@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <% include ../partials/header.ejs %>
+    <!-- <style>
+    body{
+      background:linear-gradient(to right, #757f9a, #d7dde8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    </style> -->
+  </head>
+  <body>
+  
+    <% include ../partials/nav.ejs %>
+<!-- <form action="/register" method="POST" class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal text-center">Nouvel Utilisateur</h1>
+  <label for="username" class="sr-only">Utilisateur</label> 
+    <input type="text" class="form-control mb-2" required autofocus name="username" placeholder="Nom">
+    <label for="email" class="sr-only">E-mail</label> 
+    <input type="email" class="form-control mb-2" required  name="email" placeholder="Addresse e-mail">
+    <label for="password" class="sr-only">Mot de passe</label>
+    <input type="password"  class="form-control mb-3" required  name="password" placeholder="Mot de Passe">
+    <button class="btn btn-lg btn-primary btn-block">Inscription</button>
+</form> -->
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/signup.css">
+</head>
+<body>
+    <div class="bg d-flex flex-column align-items-center justify-content-center">
+          <div class="login-container">
+            <!-- <h1 class="display-1 text-center bunker-title login-title">Christine & Cie</h1> -->
+            <h1 class=" mb-2 mt-5 text-center login-subtitle">Nouvel Utilisateur</h1>
+            <form action="/register" method="POST" class="form-signin login">
+
+              
+              <div class="form-group">
+              <label for="registerName" class="login-label">Nom d'Utilisateur</label> 
+                  <input type="text" class="form-control login-input" required id="registerName"required autofocus name="username" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail" class="login-label">E-mail</label>
+                    <input type="email" class="form-control mb-3 login-input" required id="signupEmail" name="email" placeholder="Addresse e-mail">
+                  </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="registerPassword" class="login-label">Mot de passe</label>
+                  <input type="password" class="form-control mb-3 login-input" required id="registerPassword" name="password" placeholder="">
+                </div>
+              <div class="form-group col-md-6">
+                <label for="password_confirm" class="login-label">Confirmation</label>
+                <input name="password_confirm" class="form-control mb-3 login-input" required="required" type="password" id="password_confirm" oninput="check(this)" />
+              </div>
+            </div>
+                  <button class="btn btn-lg btn-primary btn-block login-input login-submit">Inscription</button>
+              </form>
+            </div>
+          </div>
+      <% include ../partials/footer.ejs %>
+   
+    <script>
+      function check(input) {
+          if (input.value != document.getElementById('registerPassword').value) {
+              input.setCustomValidity('Les mots de passe doivent correspondre');
+          } else {
+              // input is valid -- reset the error message
+              input.setCustomValidity('');
+          }
+      }
+  </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script> 
+<script src="/js/videoSize.js"></script>
+</body>
+</html>

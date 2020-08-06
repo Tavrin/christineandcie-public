@@ -1,0 +1,165 @@
+html, body{
+    height: 100% !important;
+}
+
+.bg{
+    background-image: url("../img/sebastian-unrau-42537-unsplash-3.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    filter: grayscale(0.1);
+}
+
+/* .login-container{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: 103;
+    margin-top: 8%;
+} */
+.wrap-bouton {
+    display: block;
+    position: relative;
+    z-index: 102;
+    border-radius: 2px;
+    width: auto;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+.bouton-login{
+    z-index: 101;
+    position: absolute;
+    border: none;
+    transition: all 0.4s;
+    background: #00c7d5;
+    background: -webkit-linear-gradient(45deg, #00c7d5, #367dff);
+    background: -o-linear-gradient(45deg, #00c7d5, #367dff);
+    background: -moz-linear-gradient(45deg, #00c7d5, #367dff);
+    background: linear-gradient(45deg, #00c7d5, #367dff);
+    top: 0;
+  left: -100%;
+
+}
+
+.bouton-login:hover{
+    left: 0;
+    border: none;
+    -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+    background: #00c7d5;
+    background: -webkit-linear-gradient(45deg, #00c7d5, #367dff);
+    background: -o-linear-gradient(45deg, #00c7d5, #367dff);
+    background: -moz-linear-gradient(45deg, #00c7d5, #367dff);
+    background: linear-gradient(45deg, #00c7d5, #367dff);
+    /* background: -webkit-linear-gradient(45deg, #367dff, #00c7d5 );
+    background: -o-linear-gradient(45deg, #367dff, #00c7d5);
+    background: -moz-linear-gradient(45deg, #367dff, #00c7d5);
+    background: linear-gradient(45deg,#367dff , #00c7d5); */
+
+}
+
+
+  .video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+  }
+
+
+
+  .login-input{
+      color: rgb(31, 24, 37);
+      /* text-align: center; */
+        display: block;
+        width: 96%;
+        margin: auto;
+        padding: 13px;
+        border: 0;
+        border-radius: 20px;
+        font-family: 'Lato' !important;
+        font-size: 18px;
+        font-weight: 600;
+        opacity: 0.65;
+        height: initial !important;
+        line-height: initial !important;
+    }  
+    .login-input:focus{
+        /* color: rgb(0, 0, 0); */
+        opacity: 0.90;
+      }  
+
+.login-submit{
+    font-family: 'Josefin Sans' !important;
+    margin-top: 20%;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+    height: 50px !important;
+    font-weight: 700;
+    color: #fff;
+    opacity: 1;
+    background-color: #f1ad47;
+    cursor: pointer;
+}
+.login-submit:not(:disabled):not(.disabled):active{
+    border: none;
+    background-color: #aa4931;
+}
+.login-submit:hover{
+    margin-top: 20%;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    opacity: 1;
+    background-color: #df8033;
+    cursor: pointer;
+}
+.login-label{
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    font-family: 'Josefin Sans' !important;
+}
+
+.login-subtitle{
+    font-family: 'Josefin Sans';
+    color: rgb(255, 254, 248);
+    /* text-transform: uppercase; */
+    /* font-weight: 600 !important; */
+    letter-spacing: 3px;
+}
+
+.login-title{
+    
+    color: rgb(255, 254, 248);
+}
+
+.form-signin{
+    max-width: 474px;
+    margin-top: 50px !important;
+}
+
+@media only screen and (max-width: 720px) {
+    .login-container{
+        top: 66px !important;
+    }
+    .form-signin{
+        margin-top: 50px !important;
+    }
+}

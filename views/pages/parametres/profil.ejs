@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../../partials/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/settings.css">
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+     <div class="wrapper">
+       <div class="row">
+     <%include ../../partials/navSettings.ejs%>
+        
+        <div class="col-md-9">
+          <div class="subhead mt-0 mb-0">
+            <h2 class="subhead-heading">Paramètres du profil</h2>
+          </div>
+          <form action="/parametres/profil" method="POST" enctype="multipart/form-data" id="form-user">
+              <dl class="form-group edit-profile-avatar mr-4 float-right">
+                  <dt><label for="upload-profile-picture">Photo de profil</label></dt>
+                  <dd class="avatar-upload-container clearfix">
+                    <img class="avatar rounded-2" id="inputImage" src="<%if(user.avatar){%><%=user.avatar%><%}else{%>/upload/img-profil/placeholder.png<%}%>" width="230" height="230">
+                    <div class="avatar-upload">
+                        <input type="file" id="fu" name="avatar" onchange="readURL(this);" accept="image/*" style="width: 0; display: none">
+                        <div>
+                            <input type="button" class="bouton-settings" onclick="document.getElementById('fu').click()" 
+                            value="Choisir une photo" />
+                            </div>
+                
+                      <!-- <div class="upload-state loading">
+                        <button type="button" class="btn mt-3 width-full text-center" disabled="">
+                          <img width="16" height="16" alt="" class="v-align-text-bottom" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif"> Uploading...
+                        </button>
+                      </div>
+                 -->
+                      <div class="upload-state text-red file-empty">
+                        This file is empty.
+                      </div>
+                
+                      <div class="upload-state text-red too-big">
+                        Veuillez choisir une image de moins de 1 MB.
+                      </div>
+                
+                      <div class="upload-state text-red bad-file">
+                        Veuillez choisir une image au format PNG ou JPEG.
+                      </div>
+                
+                      <div class="upload-state text-red failed-request">
+                        Something went really wrong and we can’t process that picture.
+                      </div>
+                    </div> <!-- /.avatar-upload -->
+
+
+                  </dd>
+                </dl>
+                <div class="column two-thirds">
+                    <dl class="form-group">
+                      <dt><label for="user_profile_name">Nom Public</label></dt>
+                      <dd><input class="form-control" type="text" value="<%if(user.realName){%><%=user.realName%><%}%>" name="realName" id="user_profile_name" ></dd>
+                    </dl>
+                  <dl class="form-group">
+                    <dt><label for="user_profile_bio">Bio</label></dt>
+                    <dd class="user-profile-bio-field-container js-suggester-container js-length-limited-input-container">
+                      <textarea class="form-control user-profile-bio-field js-suggester-field js-length-limited-input" placeholder="Parlez nous un peu de vous" maxlength="160" data-warning-text="{{remaining}} remaining" name="bio" id="user_profile_bio"><%if(user.bio){%><%=user.bio%><%}%></textarea>
+                    </dd>
+                  </dl>
+                  <dl class="form-group">
+                    <dt><label for="user_profile_blog">URL</label></dt>
+                    <dd><input type="url" class="form-control" value="<%if(user.url){%><%=user.url%><%}%>" name="url" id="user_profile_blog"></dd>
+                  </dl>
+                  <hr>
+                  <dl class="form-group">
+                    <dt><label for="user_profile_location">Emplacement</label></dt>
+                    <dd><input class="form-control" type="text" value="<%if(user.location){%><%=user.location%><%}%>" name="location" id="user_profile_location"></dd>
+                  </dl>
+            
+            
+                    <p class="note mb-2">
+                      Les éléments de cette page sont optionnels et peuvent être supprimés n'importe quand. En les remplissant vous nous donnez l'autorisation de les afficher publiquement à toute personne visionnant votre profil.
+                    </p>
+            
+                   <p><button type="submit" class="btn btn-primary">Mettre à jour</button></p>
+                </div>
+          </form>
+        </div>
+
+      </div>
+     </div>
+  
+
+ <div class="bottom"><% include ../../partials/footer.ejs %></div>
+ <script src="/js/parametres.js"></script>
+ <script>
+   $('#navProfil').addClass("selected")
+ </script>
+ </body>
+ </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <% include ../partials/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/image.css">
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-sm-10 mx-auto">
+                <img src="/img/photo-groupe-1.png" usemap="#image-map">
+                    <map name="image-map" id="imagemap">
+                        <area target="_self" id="christel" alt="Christel" title="Christel" href="#" coords="459,71,633,180" shape="rect">
+                        <area target="" alt="Marine" id='marine' title="Marine" href="#" coords="322,191,510,318" shape="0">
+                    </map>
+            </div>
+            <div class="col-lg-6 col-sm-10 mx-auto">
+                    <h2 class="services-titre text-center" id="bio-titre">Biographies</h2>
+                    <div style="max-width: 60%" class="mx-auto mt-4 pt-4">
+                            <h3 class="services-titre text-center" style="font-size: 2rem" id="bio-details">Cliquez sur nous :)</h3>
+                    </div>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer.ejs %>
+<script>
+    let titre = $('#bio-titre');
+    let bio = $("#bio-details");
+
+    let christel = $("#christel");
+    let marine = $("#marine");
+
+    christel.on('click', function(e){
+        let bio = $("#bio-details");
+        titre.fadeOut(function(){
+            $(this).text("Christel")
+        }).fadeIn()
+
+        
+        bio.fadeOut(function(){
+            $(this).replaceWith(`
+                        <ul id="bio-details" class="list-unstyled">
+                            <li class="bio-list-item"><span style="color:#1A6496">P</span>sychologue du Travail (organisation, gestion, recrutement, management)</li>
+                            <li class="bio-list-item"><span style="color:#D6374C">C</span>onseillère en Orientation Professionnelle</li>
+                            <li class="bio-list-item"><span style="color:#51B551">C</span>hef de projet - Livre « Le Bonheur Au Travail »</li>
+                            <li class="bio-list-item"><span style="color:#EEDE54">A</span>ccompagnement à la scolarité des collégiens : confiance en soi et orientation</li>
+                            <li class="bio-list-item"><span style="color:#437432">P</span>réparation Militaire Supérieure</li>
+                            <li class="bio-list-item"><span style="color:#033B45">H</span>obbies : lecture (développement personnel, business, efficacité…), organisation, planification et atteinte des objectifs</li>
+                        </ul>`
+                        )
+                    }).fadeIn()
+    })
+    marine.on('click', function(e){
+        let bio = $("#bio-details");
+
+        titre.fadeOut(function(){
+            $(this).text("Marine")
+        }).fadeIn()
+
+        bio.fadeOut(function(){
+            $(this).replaceWith(`
+                        <ul id="bio-details" class="list-unstyled">
+                                <li class="bio-list-item">Assistante de Service Social</li>
+                                <li class="bio-list-item">Conseillère en Insertion Socio-Professionnelle « Référente Justice »</li>
+                                <li class="bio-list-item">Accompagnement à la scolarité des collégiens : Animation, organisation et gestion d’équipe</li>
+                                <li class="bio-list-item">Événementiel : Organisation et gestion de projets</li>
+                                <li class="bio-list-item">Hobbies : Basket Ball, livres de développement personnel, le droit et son chat</li>
+                        </ul>`
+                        )
+                    }).fadeIn()
+    })
+
+</script>
+</body>
+</html>
